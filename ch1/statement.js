@@ -11,8 +11,7 @@ module.exports = {
 
         for (const perf of invoice.performances) {
             const play = plays[perf.playID];
-            let thisAmount = 0;
-            thisAmount = amountFor(play, perf);
+            let thisAmount = amountFor(play, perf);
 
             // 포인트 적립
             volumeCredits += Math.max(perf.audience - 30, 0);
