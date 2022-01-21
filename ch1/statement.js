@@ -10,18 +10,8 @@ module.exports = {
         }).format;
 
 
-        function volumeCreditsFor(perf) {
-            // 포인트 적립
-            volumeCredits += Math.max(perf.audience - 30, 0);
-
-            // 희극 관객 5명마다 추가 포인트 제공
-            if ("comedy" === playFor(perf).type) {
-                volumeCredits += Math.floor(perf.audience / 5);
-            }
-        }
-
         for (const perf of invoice.performances) {
-            volumeCreditsFor(perf);
+            volumeCredits += volumeCreditsFor(perf);
 
             // 청구 내역 출력
             result += ` ${playFor(perf).name}: ${format(amountFor(perf) / 100)} (${perf.audience}석)\n`;
@@ -60,6 +50,18 @@ module.exports = {
 
         function playFor(perf) {
             return plays[perf.playID];
+        }
+
+        function volumeCreditsFor(perf) {
+            let volumeCredits = 0;
+            // 포인트 적립
+            volumeCredits += Math.max(perf.audience - 30, 0);
+
+            // 희극 관객 5명마다 추가 포인트 제공
+            if ("comedy" === playFor(perf).type) {
+                volumeCredits += Math.floor(perf.audience / 5);
+            }
+            return volumeCredits;
         }
     }
 }
