@@ -1,3 +1,6 @@
-function statement(invoice, plays) {
-    return null
-}
+module.exports = {
+    statement: (invoice, plays) => {
+        return null;
+    }
+};
+

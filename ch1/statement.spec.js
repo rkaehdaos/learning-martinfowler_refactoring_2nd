@@ -1,6 +1,6 @@
-import playDate from './plays.json';
-import invoiceData from './invoices.json';
-const {statement} = require('./statement');
-test('ㅇㅇㅇ', ()=>{
-    expect(statement(invoiceData, playDate)).toEqual(1625);
+let invoiceData = require('./invoices.json');
+let playData = require('./plays.json');
+const {statement} = require("./statement.js");
+test('ㅇㅇㅇ', () => {
+    expect(statement(invoiceData, playData)).toEqual(1625);
 })
