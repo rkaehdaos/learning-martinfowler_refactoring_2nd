@@ -13,12 +13,13 @@ module.exports = {
         }
 
         for (let perf of invoice.performances) {
-            volumeCredits += volumeCreditsFor(perf);
-        }
-        for (let perf of invoice.performances) {
             // 청구 내역 출력
             result += ` ${playFor(perf).name}: ${convertNumberToUSDFormat(amountFor(perf))} (${perf.audience}석)\n`;
             totalAmount += amountFor(perf);
+        }
+
+        for (let perf of invoice.performances) {
+            volumeCredits += volumeCreditsFor(perf);
         }
 
         result += `총액: ${convertNumberToUSDFormat(totalAmount)}\n`;
