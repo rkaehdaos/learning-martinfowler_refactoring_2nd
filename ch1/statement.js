@@ -9,20 +9,20 @@ module.exports = {
             minimumFractionDigits: 2
         }).format;
 
+
         for (const perf of invoice.performances) {
-            const play = plays[perf.playID];
-            let thisAmount = amountFor(perf, play);
+            let thisAmount = amountFor(perf, playFor(perf));
 
             // 포인트 적립
             volumeCredits += Math.max(perf.audience - 30, 0);
 
             // 희극 관객 5명마다 추가 포인트 제공
-            if ("comedy" === play.type) {
+            if ("comedy" === playFor(perf).type) {
                 volumeCredits += Math.floor(perf.audience / 5);
             }
 
             // 청구 내역 출력
-            result += ` ${play.name}: ${format(thisAmount / 100)} (${perf.audience}석)\n`;
+            result += ` ${playFor(perf).name}: ${format(thisAmount / 100)} (${perf.audience}석)\n`;
             totalAmount += thisAmount;
         }
 
@@ -31,22 +31,22 @@ module.exports = {
         return result;
 
 
-        function amountFor(perf, play) {
+        function amountFor(aPerformance, play) {
             let result = 0;
             switch (play.type) {
                 case "tragedy": // 비극
                     result = 40000;
-                    if (perf.audience > 30) {
-                        result += 1000 * (perf.audience - 30);
+                    if (aPerformance.audience > 30) {
+                        result += 1000 * (aPerformance.audience - 30);
                     }
                     break;
 
                 case "comedy": // 희극
                     result = 30000;
-                    if (perf.audience > 20) {
-                        result += 10000 + 500 * (perf.audience - 20);
+                    if (aPerformance.audience > 20) {
+                        result += 10000 + 500 * (aPerformance.audience - 20);
                     }
-                    result += 300 * perf.audience;
+                    result += 300 * aPerformance.audience;
                     break;
 
                 default:
@@ -54,6 +54,10 @@ module.exports = {
 
             }
             return result;
+        }
+
+        function playFor(perf) {
+            return plays[perf.playID];
         }
     }
 }
