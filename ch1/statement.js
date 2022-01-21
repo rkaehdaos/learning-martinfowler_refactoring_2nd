@@ -52,16 +52,16 @@ module.exports = {
             return plays[perf.playID];
         }
 
-        function volumeCreditsFor(perf) {
-            let volumeCredits = 0;
+        function volumeCreditsFor(aPerformance) {
+            let result = 0;
             // 포인트 적립
-            volumeCredits += Math.max(perf.audience - 30, 0);
+            result += Math.max(aPerformance.audience - 30, 0);
 
             // 희극 관객 5명마다 추가 포인트 제공
-            if ("comedy" === playFor(perf).type) {
-                volumeCredits += Math.floor(perf.audience / 5);
+            if ("comedy" === playFor(aPerformance).type) {
+                result += Math.floor(aPerformance.audience / 5);
             }
-            return volumeCredits;
+            return result;
         }
     }
 }
