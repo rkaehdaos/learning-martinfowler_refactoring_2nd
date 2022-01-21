@@ -15,13 +15,13 @@ module.exports = {
         for (let perf of invoice.performances) {
             // 청구 내역 출력
             result += ` ${playFor(perf).name}: ${convertNumberToUSDFormat(amountFor(perf))} (${perf.audience}석)\n`;
+        }
+        for (let perf of invoice.performances) {
             totalAmount += amountFor(perf);
         }
 
-        let volumeCredits = totalVolumeCredits();
-
         result += `총액: ${convertNumberToUSDFormat(totalAmount)}\n`;
-        result += `적립 포인트: ${volumeCredits}점\n`;
+        result += `적립 포인트: ${(totalVolumeCredits())}점\n`;
         return result;
 
         function amountFor(aPerformance) {
