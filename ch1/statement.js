@@ -12,9 +12,10 @@ module.exports = {
             }).format(aNumber / 100);
         }
 
-        for (const perf of invoice.performances) {
+        for (let perf of invoice.performances) {
             volumeCredits += volumeCreditsFor(perf);
-
+        }
+        for (let perf of invoice.performances) {
             // 청구 내역 출력
             result += ` ${playFor(perf).name}: ${convertNumberToUSDFormat(amountFor(perf))} (${perf.audience}석)\n`;
             totalAmount += amountFor(perf);
@@ -23,7 +24,6 @@ module.exports = {
         result += `총액: ${convertNumberToUSDFormat(totalAmount)}\n`;
         result += `적립 포인트: ${volumeCredits}점\n`;
         return result;
-
 
         function amountFor(aPerformance) {
             let result = 0;
