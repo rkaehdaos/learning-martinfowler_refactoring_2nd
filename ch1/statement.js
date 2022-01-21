@@ -18,10 +18,7 @@ module.exports = {
             totalAmount += amountFor(perf);
         }
 
-        let volumeCredits = 0;
-        for (let perf of invoice.performances) {
-            volumeCredits += volumeCreditsFor(perf);
-        }
+        let volumeCredits = totalVolumeCredits();
 
         result += `총액: ${convertNumberToUSDFormat(totalAmount)}\n`;
         result += `적립 포인트: ${volumeCredits}점\n`;
@@ -66,6 +63,14 @@ module.exports = {
                 result += Math.floor(aPerformance.audience / 5);
             }
             return result;
+        }
+
+        function totalVolumeCredits() {
+            let volumeCredits = 0;
+            for (let perf of invoice.performances) {
+                volumeCredits += volumeCreditsFor(perf);
+            }
+            return volumeCredits;
         }
     }
 }
