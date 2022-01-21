@@ -1,6 +1,6 @@
 module.exports = {
     statement: (invoice, plays) => {
-        let totalAmount = 0;
+
 
         let result = `청구 내역 (고객명: ${invoice.customer})\n`;
 
@@ -16,6 +16,8 @@ module.exports = {
             // 청구 내역 출력
             result += ` ${playFor(perf).name}: ${convertNumberToUSDFormat(amountFor(perf))} (${perf.audience}석)\n`;
         }
+
+        let totalAmount = 0;
         for (let perf of invoice.performances) {
             totalAmount += amountFor(perf);
         }
