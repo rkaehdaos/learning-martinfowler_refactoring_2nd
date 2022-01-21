@@ -11,7 +11,7 @@ module.exports = {
 
 
         for (const perf of invoice.performances) {
-            let thisAmount = amountFor(perf, playFor(perf));
+            let thisAmount = amountFor(perf);
 
             // 포인트 적립
             volumeCredits += Math.max(perf.audience - 30, 0);
@@ -31,7 +31,7 @@ module.exports = {
         return result;
 
 
-        function amountFor(aPerformance, play) {
+        function amountFor(aPerformance) {
             let result = 0;
             switch (playFor(aPerformance).type) {
                 case "tragedy": // 비극
