@@ -10,7 +10,7 @@ module.exports = {
         }).format;
 
 
-        for (const perf of invoice.performances) {
+        function volumeCreditsFor(perf) {
             // 포인트 적립
             volumeCredits += Math.max(perf.audience - 30, 0);
 
@@ -18,6 +18,10 @@ module.exports = {
             if ("comedy" === playFor(perf).type) {
                 volumeCredits += Math.floor(perf.audience / 5);
             }
+        }
+
+        for (const perf of invoice.performances) {
+            volumeCreditsFor(perf);
 
             // 청구 내역 출력
             result += ` ${playFor(perf).name}: ${format(amountFor(perf) / 100)} (${perf.audience}석)\n`;
