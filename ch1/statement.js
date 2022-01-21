@@ -17,7 +17,7 @@ module.exports = {
             result += ` ${playFor(perf).name}: ${convertNumberToUSDFormat(amountFor(perf))} (${perf.audience}석)\n`;
         }
 
-        result += `총액: ${convertNumberToUSDFormat(appleSauce())}\n`;
+        result += `총액: ${convertNumberToUSDFormat(totalAmount())}\n`;
         result += `적립 포인트: ${(totalVolumeCredits())}점\n`;
         return result;
 
@@ -63,19 +63,17 @@ module.exports = {
         }
 
         function totalVolumeCredits() {
-            let volumeCredits = 0;
-            for (let perf of invoice.performances) {
-                volumeCredits += volumeCreditsFor(perf);
-            }
-            return volumeCredits;
+            let result = 0;
+            for (let perf of invoice.performances)
+                result += volumeCreditsFor(perf);
+            return result;
         }
 
-        function appleSauce() {
-            let totalAmount = 0;
-            for (let perf of invoice.performances) {
-                totalAmount += amountFor(perf);
-            }
-            return totalAmount;
+        function totalAmount() {
+            let result = 0;
+            for (let perf of invoice.performances)
+                result += amountFor(perf);
+            return result;
         }
     }
 }
