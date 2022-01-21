@@ -25,6 +25,7 @@ module.exports = {
                     if (perf.audience > 20) {
                         thisAmount += 10000 + 500 * (perf.audience - 20);
                     }
+                    thisAmount += 300 * perf.audience;
                     break;
 
                 default:
