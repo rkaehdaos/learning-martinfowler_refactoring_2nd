@@ -17,8 +17,7 @@ module.exports = {
             result += ` ${playFor(perf).name}: ${convertNumberToUSDFormat(amountFor(perf))} (${perf.audience}석)\n`;
         }
 
-        let totalAmount = appleSauce();
-        result += `총액: ${convertNumberToUSDFormat(totalAmount)}\n`;
+        result += `총액: ${convertNumberToUSDFormat(appleSauce())}\n`;
         result += `적립 포인트: ${(totalVolumeCredits())}점\n`;
         return result;
 
