@@ -60,5 +60,11 @@ module.exports = {
             return data.performances
                 .reduce((t, p) => t + p.amount, 0);
         }
+    },
+    PerformanceCalculator: class {
+
+        constructor(aPerformance) {
+            this.aPerformance = aPerformance;
+        }
     }
 };

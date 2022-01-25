@@ -1,4 +1,4 @@
-const {createStatementData} = require('./createStatementData.js');
+const {createStatementData,PerformanceCalculator} = require('./createStatementData.js');
 
 module.exports = {
     statement: (invoice, plays) => {
