@@ -55,11 +55,12 @@ module.exports = {
             return result;
         }
         function totalVolumeCredits(data) {
-            return data.performances.reduce((t, p) => t + p.volumeCredits, 0);
+            return data.performances
+                .reduce((t, p) => t + p.volumeCredits, 0);
         }
-
         function totalAmount(data) {
-            return data.performances.reduce((t, p) => t + p.amount, 0);
+            return data.performances
+                .reduce((t, p) => t + p.amount, 0);
         }
     }
 };
@@ -71,8 +72,8 @@ function renderPlainText(data, plays) {
     for (let perf of data.performances)
         result += ` ${perf.play.name}: ${convertNumberToUSDFormat(perf.amount)} (${perf.audience}석)\n`;
 
-    result += `총액: ${convertNumberToUSDFormat(totalAmount())}\n`;
-    result += `적립 포인트: ${(totalVolumeCredits())}점\n`;
+    result += `총액: ${convertNumberToUSDFormat(data.totalAmount)}\n`;
+    result += `적립 포인트: ${(data.totalVolumeCredits)}점\n`;
     return result;
 
     function convertNumberToUSDFormat(aNumber) {
@@ -82,22 +83,5 @@ function renderPlainText(data, plays) {
             minimumFractionDigits: 2
         }).format(aNumber / 100);
     }
-
-
-
-    function totalVolumeCredits() {
-        let result = 0;
-        for (let perf of data.performances)
-            result += perf.volumeCredits;
-        return result;
-    }
-
-    function totalAmount() {
-        let result = 0;
-        for (let perf of data.performances)
-            result += perf.amount;
-        return result;
-    }
-
 }
 
