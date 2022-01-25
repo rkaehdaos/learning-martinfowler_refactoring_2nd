@@ -39,20 +39,15 @@ module.exports = {
 
                 default:
                     throw new Error(`알 수 없는 장르: ${aPerformance.play.type}`);
-
             }
             return result;
         }
 
         function volumeCreditsFor(aPerformance) {
             let result = 0;
-            // 포인트 적립
             result += Math.max(aPerformance.audience - 30, 0);
-
-            // 희극 관객 5명마다 추가 포인트 제공
-            if ("comedy" === aPerformance.play.type) {
+            if ("comedy" === aPerformance.play.type)
                 result += Math.floor(aPerformance.audience / 5);
-            }
             return result;
         }
 
