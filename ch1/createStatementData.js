@@ -3,24 +3,10 @@ class PerformanceCalculator {
         this.performance = aPerformance;
         this.play = aPlay;
     }
-    get amount(){
-        let result = 0;
-        switch (this.play.type) {
 
-            case "comedy": // 희극
-                result = 30000;
-                if (this.performance.audience > 20) {
-                    result += 10000 + 500 * (this.performance.audience - 20);
-                }
-                result += 300 * this.performance.audience;
-                break;
+    get amount() {}
 
-            default:
-                throw new Error(`알 수 없는 장르: ${this.play.type}`);
-        }
-        return result;
-    }
-    get volumeCredits(){
+    get volumeCredits() {
         let result = 0;
         result += Math.max(this.performance.audience - 30, 0);
         if ("comedy" === this.play.type)
@@ -28,27 +14,38 @@ class PerformanceCalculator {
         return result;
     }
 }
-class tragedyCalculator extends PerformanceCalculator{
+
+class tragedyCalculator extends PerformanceCalculator {
 
     get amount() {
         let result = 40000;
-        if (this.performance.audience > 30) {
+        if (this.performance.audience > 30)
             result += 1000 * (this.performance.audience - 30);
-        }
         return result;
     }
 }
-class ComedyCalculator extends PerformanceCalculator{}
+
+class ComedyCalculator extends PerformanceCalculator {
+
+    get amount() {
+        let result = 30000;
+        if (this.performance.audience > 20)
+            result += 10000 + 500 * (this.performance.audience - 20);
+        result += 300 * this.performance.audience;
+        return result;
+    }
+}
 
 //factory method
 function createPerformanceCalculator(aPerformance, aPlay) {
     switch (aPlay.type) {
-        case "tragedy": return new tragedyCalculator(aPerformance, aPlay);
-        case "comedy": return new ComedyCalculator(aPerformance, aPlay);
+        case "tragedy":
+            return new tragedyCalculator(aPerformance, aPlay);
+        case "comedy":
+            return new ComedyCalculator(aPerformance, aPlay);
         default:
             throw new Error(`알 수 없는 장르 ${aPlay.type}`);
     }
-
 }
 
 module.exports = {
