@@ -33,11 +33,19 @@ class PerformanceCalculator {
             result += Math.floor(this.performance.audience / 5);
         return result;
     }
-
 }
+class tragedyCalculator extends PerformanceCalculator{}
+class ComedyCalculator extends PerformanceCalculator{}
 
+//factory method
 function createPerformanceCalculator(aPerformance, aPlay) {
-    return new PerformanceCalculator(aPerformance, aPlay);
+    switch (aPlay.type) {
+        case "tragedy": return new tragedyCalculator(aPerformance, aPlay);
+        case "comedy": return new ComedyCalculator(aPerformance, aPlay);
+        default:
+            throw new Error(`알 수 없는 장르 ${aPlay.type}`);
+    }
+
 }
 
 module.exports = {
