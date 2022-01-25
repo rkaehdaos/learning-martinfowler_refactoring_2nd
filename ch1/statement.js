@@ -3,17 +3,20 @@ module.exports = {
         const statementData = {};
         statementData.customer = invoice.customer;
         statementData.performances = invoice.performances.map(enrichPerformance);
-        return renderPlainText(statementData,  plays);
+        return renderPlainText(statementData, plays);
 
         function enrichPerformance(aPerformance) {
             const result = Object.assign({}, aPerformance);
             result.play = playFor(result);
             result.amount = amountFor(result);
+            result.volumeCredits = volumeCreditsFor(result);
             return result;
         }
+
         function playFor(perf) {
             return plays[perf.playID];
         }
+
         function amountFor(aPerformance) {
             let result = 0;
             switch (aPerformance.play.type) {
@@ -38,10 +41,21 @@ module.exports = {
             }
             return result;
         }
+        function volumeCreditsFor(aPerformance) {
+            let result = 0;
+            // 포인트 적립
+            result += Math.max(aPerformance.audience - 30, 0);
+
+            // 희극 관객 5명마다 추가 포인트 제공
+            if ("comedy" === aPerformance.play.type) {
+                result += Math.floor(aPerformance.audience / 5);
+            }
+            return result;
+        }
     }
 };
 
-function renderPlainText(data,  plays) {
+function renderPlainText(data, plays) {
 
     let result = `청구 내역 (고객명: ${data.customer})\n`;
 
@@ -62,24 +76,10 @@ function renderPlainText(data,  plays) {
 
 
 
-
-
-    function volumeCreditsFor(aPerformance) {
-        let result = 0;
-        // 포인트 적립
-        result += Math.max(aPerformance.audience - 30, 0);
-
-        // 희극 관객 5명마다 추가 포인트 제공
-        if ("comedy" === aPerformance.play.type) {
-            result += Math.floor(aPerformance.audience / 5);
-        }
-        return result;
-    }
-
     function totalVolumeCredits() {
         let result = 0;
         for (let perf of data.performances)
-            result += volumeCreditsFor(perf);
+            result += perf.volumeCredits;
         return result;
     }
 
