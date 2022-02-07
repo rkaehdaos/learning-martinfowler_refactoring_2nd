@@ -92,6 +92,4 @@ class Producer {
     }
 }
 
-module.exports = {
-    sampleProvinceData: () => sampleProvinceData(), Province, Producer
-};
+export {sampleProvinceData, Province, Producer};
