@@ -4,7 +4,7 @@ import {sampleProvinceData, Province, Producer} from './test4-1.js'
 
 describe('province', () => {
     let asia;
-    beforeEach(() => {asia = new Province(sampleProvinceData());})
+    beforeEach(() => {asia = new Province(sampleProvinceData());});
     it('shortfall', () => expect(asia.shortfall).equal(5));
     it('profit', () => expect(asia.profit).equal(230));
     it('change production', () => {
@@ -39,7 +39,20 @@ describe('no producers', () => {
             price: 20
         };
         noProducers = new Province(data);
-    })
+    });
     it('shortfall', () => expect(noProducers.shortfall).equal(30));
     it('profit', () => expect(noProducers.profit).equal(0));
+});
+describe('string for producers(생산자 수 필드에 문자열 대입)', () => {
+    it('', () => {
+        const data = {
+            name: "No producers",
+            producers: "",
+            demand: 30,
+            price: 20
+        };
+        const prov = new Province(data);
+        expect(prov.shortfall).equal(0);
+    });
+
 });
