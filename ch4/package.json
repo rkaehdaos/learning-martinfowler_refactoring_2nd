@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha *.spec.js --reporter nyan",
-    "test1": "node ./node_modules/mocha/bin/mocha test/**/*.js --reporter nyan",
-    "test2": "node ./node_modules/mocha/bin/mocha **/*.spec.js --reporter nyan"
+    "test": "node ./node_modules/mocha/bin/mocha **/*.spec.js --reporter nyan",
+    "test1": "node ./node_modules/mocha/bin/mocha test/**/*.js --reporter nyan"
   },
   "keywords": [],
   "author": "",
