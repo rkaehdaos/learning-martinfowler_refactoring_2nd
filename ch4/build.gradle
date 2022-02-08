@@ -3,7 +3,6 @@ plugins {
 }
 repositories {
     mavenCentral()
-    gradlePluginPortal()
 }
 task ch4Test(type: NpmTask) {
     dependsOn npmInstall
