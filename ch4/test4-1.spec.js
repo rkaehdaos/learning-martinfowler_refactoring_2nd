@@ -43,16 +43,18 @@ describe('no producers', () => {
     it('shortfall', () => expect(noProducers.shortfall).equal(30));
     it('profit', () => expect(noProducers.profit).equal(0));
 });
+
 describe('string for producers(생산자 수 필드에 문자열 대입)', () => {
-    it('', () => {
+    it('type error check', () => {
         const data = {
             name: "No producers",
             producers: "",
             demand: 30,
             price: 20
         };
-        const prov = new Province(data);
-        expect(prov.shortfall).equal(0);
+        // new Province(data);
+        expect(() => new Province(data)).to.throw(TypeError,
+            'doc.producers.forEach is not a function');
     });
 
 });
