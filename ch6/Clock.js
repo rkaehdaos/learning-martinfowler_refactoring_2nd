@@ -1,8 +1,6 @@
 class Clock {
 
-    constructor(date) {
-        this.date = date;
-    }
+    constructor(date) { this.date = date; }
 
     static createInstance(arg) {
         return new Proxy(new this(new Date(arg)), {get: (target, prop) => () => target.date[prop]()});
