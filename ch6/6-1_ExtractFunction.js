@@ -6,27 +6,28 @@ function printBanner() {
     console.log('*****************');
 }
 
-function calculateOutstanding() {
+function calculateOutstanding(invoice) {
     return 100;
 }
 
 function printOwing(invoice) {
     let outstanding = 0;
     printBanner();
-    outstanding = calculateOutstanding();
+    outstanding = calculateOutstanding(invoice);
     // const today = new Date(Date.now());
     // const today = Clock.day('2017-01-26');
     const today = Clock.today()
 
-    invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate()+30);
-    printDetails();
+    invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
 
-    function printDetails() {
-        //세부사항 출력
-        console.log(`고객명: ${invoice.customer}`);
-        console.log(`채무액: ${outstanding}`);
-        console.log(`마감일: ${invoice.dueDate.toLocaleDateString()}`);
-    }
+    printDetails(invoice, outstanding);
+}
+
+function printDetails(invoice, outstanding) {
+    //세부사항 출력
+    console.log(`고객명: ${invoice.customer}`);
+    console.log(`채무액: ${outstanding}`);
+    console.log(`마감일: ${invoice.dueDate.toLocaleDateString()}`);
 }
 
 export {printOwing};
