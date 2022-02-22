@@ -1,5 +1,9 @@
+import {Clock} from "./Clock.js";
+
 function printBanner() {
-    console.log('printBanner~');
+    console.log('*****************');
+    console.log('**** 고객 채무 ****');
+    console.log('*****************');
 }
 
 function calculateOutstanding() {
@@ -7,14 +11,18 @@ function calculateOutstanding() {
 }
 
 function printOwing(invoice) {
+    let outstanding = 0;
     printBanner();
-    let outstanding = calculateOutstanding();
+    outstanding = calculateOutstanding();
+    const today = Clock.today()
+    invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate()+30);
     printDetails();
 
     function printDetails() {
         //세부사항 출력
         console.log(`고객명: ${invoice.customer}`);
         console.log(`채무액: ${outstanding}`);
+        console.log(`마감일: ${invoice.dueDate.toLocaleDateString()}`);
     }
 }
 
