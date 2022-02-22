@@ -7,8 +7,7 @@ class Clock {
     static today() {
         return new this(new Date(Date.now()));
     }
-    static fromString(str) {
-        //new Date("2017-01-26");
+    static fromStringDate(str) {
         return new this(new Date(str));
     }
 

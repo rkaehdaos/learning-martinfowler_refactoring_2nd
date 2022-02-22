@@ -14,6 +14,7 @@ function printOwing(invoice) {
     let outstanding = 0;
     printBanner();
     outstanding = calculateOutstanding();
+    // const today = Clock.fromStringDate('2017-01-26');
     const today = Clock.today()
     invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate()+30);
     printDetails();
