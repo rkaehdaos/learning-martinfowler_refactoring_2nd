@@ -3,18 +3,21 @@ class Clock {
     constructor(date) {
         this.date = date;
     }
-
     static today() {
-        return new this(new Date(Date.now()));
+        return new Proxy(new this(new Date(Date.now())), {
+            get(target, prop) {
+                return () => target.date[prop]();
+            }
+        });
     }
+
     static fromStringDate(str) {
-        return new this(new Date(str));
+        return new Proxy(new this(new Date(str)), {
+            get(target, prop) {
+                return () => target.date[prop]();
+            }
+        });
     }
-
-    getFullYear() { return this.date.getFullYear(); }
-    getMonth() { return this.date.getMonth(); }
-    getDate() { return this.date.getDate(); }
-
 }
 
 export {Clock};
