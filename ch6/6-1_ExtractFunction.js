@@ -7,10 +7,10 @@ function printBanner() {
 }
 
 function calculateOutstanding(invoice) {
-    let outstanding = 0;
+    let result = 0;
     for (const o of invoice.orders)
-        outstanding+=o.amount;
-    return outstanding;
+        result+=o.amount;
+    return result;
 }
 
 function printOwing(invoice) {
