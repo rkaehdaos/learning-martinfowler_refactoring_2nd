@@ -9,17 +9,14 @@ function printBanner() {
 function calculateOutstanding(invoice) {
     let result = 0;
     for (const o of invoice.orders)
-        result+=o.amount;
+        result += o.amount;
     return result;
 }
 
 function printOwing(invoice) {
     printBanner();
-    let outstanding = 0;
-    outstanding = calculateOutstanding(invoice);
-
+    const outstanding = calculateOutstanding(invoice);
     recordDueDate(invoice);
-
     printDetails(invoice, outstanding);
 }
 
