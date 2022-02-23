@@ -11,8 +11,8 @@ function calculateOutstanding(invoice) {
 }
 
 function printOwing(invoice) {
-    let outstanding = 0;
     printBanner();
+    let outstanding = 0;
     outstanding = calculateOutstanding(invoice);
 
     recordDueDate(invoice);
