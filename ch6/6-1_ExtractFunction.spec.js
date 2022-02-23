@@ -2,6 +2,18 @@ import {assert, expect} from "chai";
 import {printOwing} from "./6-1_ExtractFunction.js"
 let invoice={
     "customer": "BigCo",
+    "orders": [
+        {
+            orderId : 1,
+            orderTitle : "title1",
+            amount : 1
+        },
+        {
+            orderId : 2,
+            orderTitle : "title2",
+            amount : 10
+        }
+    ],
     "performances": [
         {
             "playID": "hamlet",
