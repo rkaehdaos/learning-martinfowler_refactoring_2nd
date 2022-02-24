@@ -10,4 +10,4 @@ function mig_circumference(radius) {
     return 2 * Math.PI * radius;
 }
 
-export {circumference, mig_circum, mig_circumference};
+export {circumference, mig_circumference};
