@@ -3,7 +3,7 @@ function circumference(radius) {
 }
 
 function mig_circum(radius) {
-    return 2 * Math.PI * radius;
+    return mig_circumference(radius);
 }
 
 function mig_circumference(radius) {
