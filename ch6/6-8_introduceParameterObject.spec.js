@@ -21,7 +21,7 @@ const operatingPlan = {
 
 describe('매개변수 객체 만들기', () => {
     it('호출', () => {
-        const result = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling)
+        const result = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling, null);
         expect(result).is.not.null;
         expect(result).length(1);
         expect(result[0].temp).equal(47);
