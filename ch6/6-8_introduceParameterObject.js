@@ -12,4 +12,4 @@ class NumberRange {
 }
 
 
-export {readingsOutsideRange};
+export {readingsOutsideRange,NumberRange};

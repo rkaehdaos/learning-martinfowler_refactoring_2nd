@@ -1,5 +1,5 @@
 import {assert, expect} from "chai";
-import {readingsOutsideRange} from "./6-8_introduceParameterObject.js";
+import {readingsOutsideRange,NumberRange} from "./6-8_introduceParameterObject.js";
 
 // 온도 측정값
 const station = {
@@ -21,7 +21,8 @@ const operatingPlan = {
 
 describe('매개변수 객체 만들기', () => {
     it('호출', () => {
-        const result = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling, null);
+        const range = new NumberRange(operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+        const result = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling, range);
         expect(result).is.not.null;
         expect(result).length(1);
         expect(result[0].temp).equal(47);
