@@ -11,7 +11,7 @@ function priceOrder(product, quantity, shippingMethod) {
     return price;
 }
 
-function calculatePricingData() {
+function calculatePricingData(product, quantity) {
     const basePrice = product.basePrice * quantity;
     const discount = Math.max(quantity - product.discountThreshold, 0)
         * product.basePrice * product.discountRate;
