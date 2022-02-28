@@ -1,7 +1,6 @@
 import {expect} from "chai";
 import {priceOrder} from "./6-11_splitPhase.js";
 
-
 describe('6-11단계 쪼개기', () => {
     it('1', () => {
         const product1 = {
