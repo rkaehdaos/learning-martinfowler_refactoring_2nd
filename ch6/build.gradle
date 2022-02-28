@@ -1,5 +1,6 @@
 plugins {
     id "com.github.node-gradle.node" version "3.2.1"
+    id "java"
 }
 repositories {
     mavenCentral()
@@ -7,4 +8,18 @@ repositories {
 task ch6Test(type: NpmTask) {
     dependsOn npmInstall
     args = ['test']
+}
+
+test{
+    useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testImplementation 'org.assertj:assertj-core:3.22.0'
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
 }
