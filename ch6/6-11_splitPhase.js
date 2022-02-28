@@ -9,7 +9,7 @@ function priceOrder(product, quantity, shippingMethod) {
         ? shippingMethod.discountedFee : shippingMethod.feePerCase;
     const shippingCost = quantity * shippingPerCase;
     const price = basePrice - discount + shippingCost;
-    return price;
+    return applyShipping(basePrice, shippingMethod, quantity, discount);
 }
 
 function applyShipping(basePrice, shippingMethod, quantity, discount) {
