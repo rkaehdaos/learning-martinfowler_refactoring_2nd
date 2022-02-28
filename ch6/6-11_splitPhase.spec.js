@@ -23,5 +23,5 @@ describe('6-11단계 쪼개기', () => {
         // console.log(priceOrder(product1, 5, shippingMethod1));
         // console.log(priceOrder(product1, 6, shippingMethod1));
 
-    } )
+    });
 });
