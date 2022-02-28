@@ -11,6 +11,10 @@ function priceOrder(product, quantity, shippingMethod) {
     return price;
 }
 
+function calculatePricingData() {
+    
+}
+
 function applyShipping(priceData, shippingMethod) {
     const shippingPerCase = (priceData.basePrice > shippingMethod.discountThreshold)
         ? shippingMethod.discountedFee : shippingMethod.feePerCase;
