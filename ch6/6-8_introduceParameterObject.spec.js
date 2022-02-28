@@ -17,14 +17,13 @@ const station = {
 const operatingPlan = {
     temperatureFloor: 50,
     temperatureCeiling: 60
-}
+};
 
-
-
-describe('매개변수 객체 만들기',() => {
-    it('호출',()=>{
-        const result = readingsOutsideRange(station,operatingPlan.temperatureFloor,operatingPlan.temperatureCeiling)
-        console.log(result)
-        expect(result).is.not.null
-    })
-})
+describe('매개변수 객체 만들기', () => {
+    it('호출', () => {
+        const result = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling)
+        expect(result).is.not.null;
+        expect(result).length(1);
+        expect(result[0].temp).equal(47);
+    });
+});
