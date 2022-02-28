@@ -12,4 +12,8 @@ function priceOrder(product, quantity, shippingMethod) {
     return price;
 }
 
+function applyShipping(basePrice, shippingMethod, quantity, discount) {
+
+}
+
 export {priceOrder};
