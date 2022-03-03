@@ -1,4 +1,4 @@
-const customerData = {
+let customerData = {
     "1920": {
         name: "마틴 파울러",
         id: "1920",
@@ -34,4 +34,7 @@ const customerData = {
         },
     },
 };
-export {customerData};
+
+function getRawDataOfCustomers() { return customerData; }
+
+export {customerData,getRawDataOfCustomers};
