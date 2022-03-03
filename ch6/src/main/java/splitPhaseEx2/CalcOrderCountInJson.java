@@ -30,6 +30,10 @@ public class CalcOrderCountInJson {
         }
     }
 
+    static void run(){
+
+    }
+
     public static File getFile(String fileName) throws IOException {
         ClassLoader classLoader = CalcOrderCountInJson.class.getClassLoader();
         URL resource = classLoader.getResource(fileName);
