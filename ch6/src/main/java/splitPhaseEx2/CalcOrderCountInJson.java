@@ -22,10 +22,10 @@ public class CalcOrderCountInJson {
         CommandLine commandLine = new CommandLine();
         String filename = args[args.length - 1];
         commandLine.onlyCountReady = Stream.of(args).anyMatch(arg -> "-r".equals(arg));
-        return countOrders(commandLine, args, filename);
+        return countOrders(commandLine, filename);
     }
 
-    private static long countOrders(CommandLine commandLine, String[] args, String filename) throws IOException {
+    private static long countOrders(CommandLine commandLine, String filename) throws IOException {
         File inputFile = CalcOrderCountInJson.getFile(filename);
         ObjectMapper mapper = new ObjectMapper();
         Order[] orders = mapper.readValue(inputFile, Order[].class);
