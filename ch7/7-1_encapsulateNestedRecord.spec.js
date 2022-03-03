@@ -1,11 +1,7 @@
 import {expect} from "chai";
-import {customerData, getRawDataOfCustomers} from "./7-1_encapsulateNestedRecord.js";
+import {customerData, getCustomerData, getRawDataOfCustomers, setRawDataOfCustomers} from "./7-1_encapsulateNestedRecord.js";
 
 describe("7-1중첩예제", () => {
-    it("default", () => {
-        expect(customerData).to.haveOwnProperty('1920').that.haveOwnProperty('name').that.equals('마틴 파울러');
-        expect(customerData).to.haveOwnProperty('36873').that.haveOwnProperty('name').that.equals('닐 포드');
-    });
     it("쓰기", () => {
         //given
         expect(getRawDataOfCustomers()).to.haveOwnProperty('1920')
@@ -20,7 +16,7 @@ describe("7-1중첩예제", () => {
         const amount = 999;
 
         //when
-        setUsage(customerID, year, month, amount);
+        getCustomerData().setUsage(customerID, year, month, amount);
 
         //then
         expect(getRawDataOfCustomers()).to.haveOwnProperty('1920')

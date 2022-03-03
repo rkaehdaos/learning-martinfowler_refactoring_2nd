@@ -8,7 +8,7 @@ class CustomerData {
 
 }
 
-let customerData = {
+let customerData_data = {
     "1920": {
         name: "마틴 파울러",
         id: "1920",
@@ -45,7 +45,9 @@ let customerData = {
     },
 };
 
-function getRawDataOfCustomers() { return customerData; }
-function getCustomerData() { return customerData; }
+let customerData = new CustomerData(customerData_data);
 
-export {customerData, getRawDataOfCustomers, getCustomerData};
+function getCustomerData() { return customerData; }
+function getRawDataOfCustomers() { return customerData._data; }
+function setRawDataOfCustomers(arg) { customerData = new CustomerData(arg); }
+export {customerData, getRawDataOfCustomers, setRawDataOfCustomers,getCustomerData};
