@@ -28,7 +28,8 @@ public class CalcOrderCountInJson {
         File inputFile = CalcOrderCountInJson.getFile(filename);
         ObjectMapper mapper = new ObjectMapper();
         Order[] orders = mapper.readValue(inputFile, Order[].class);
-        if (Stream.of(args).anyMatch(arg -> "-r".equals(arg)))
+        boolean onlyCountReady = Stream.of(args).anyMatch(arg -> "-r".equals(arg));
+        if (onlyCountReady)
             return Stream.of(orders).filter(o -> "ready".equals(o.getStatus())).count();
         else
             return orders.length;
