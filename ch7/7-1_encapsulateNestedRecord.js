@@ -1,3 +1,9 @@
+class CustomerData {
+    constructor(data) {
+        this._data = data;
+    }
+}
+
 let customerData = {
     "1920": {
         name: "마틴 파울러",
@@ -36,5 +42,6 @@ let customerData = {
 };
 
 function getRawDataOfCustomers() { return customerData; }
+function getCustomerData() { return customerData; }
 
-export {customerData,getRawDataOfCustomers};
+export {customerData,getRawDataOfCustomers,getCustomerData};
