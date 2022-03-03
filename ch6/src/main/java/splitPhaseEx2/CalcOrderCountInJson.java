@@ -25,19 +25,15 @@ public class CalcOrderCountInJson {
 
     private static long countOrders(String[] args, String filename) throws IOException{
         File inputFile = CalcOrderCountInJson.getFile(filename);
-
         ObjectMapper mapper = new ObjectMapper();
         Order[] orders = mapper.readValue(inputFile, Order[].class);
         if (Stream.of(args).anyMatch(arg -> "-r".equals(arg)))
-            return Stream.of(orders)
-                    .filter(o -> "ready".equals(o.getStatus()))
-                    .count();
+            return Stream.of(orders).filter(o -> "ready".equals(o.getStatus())).count();
         else
             return orders.length;
     }
 
-
-    public static File getFile(String fileName) throws IOException {
+    private static File getFile(String fileName) throws IOException {
         ClassLoader classLoader = CalcOrderCountInJson.class.getClassLoader();
         URL resource = classLoader.getResource(fileName);
         if (resource == null) {
