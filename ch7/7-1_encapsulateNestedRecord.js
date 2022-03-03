@@ -2,6 +2,10 @@ class CustomerData {
     constructor(data) {
         this._data = data;
     }
+    setUsage(customerID, year, month, amount) {
+        this._data[customerID].usages[year][month] = amount;
+    }
+
 }
 
 let customerData = {
@@ -44,4 +48,4 @@ let customerData = {
 function getRawDataOfCustomers() { return customerData; }
 function getCustomerData() { return customerData; }
 
-export {customerData,getRawDataOfCustomers,getCustomerData};
+export {customerData, getRawDataOfCustomers, getCustomerData};
