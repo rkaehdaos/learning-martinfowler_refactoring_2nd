@@ -20,7 +20,6 @@ public class CalcOrderCountInJson {
     static long run(String[] args) throws IOException{
         if(args.length==0) throw new RuntimeException("파일명을 입력하세요");
         String filename = args[args.length - 1];
-        File inputFile = CalcOrderCountInJson.getFile(filename);
         return countOrders(args, filename);
     }
 
