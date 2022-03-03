@@ -1,5 +1,5 @@
 import {expect} from "chai";
-import {customerData, getCustomerData, getRawDataOfCustomers, setRawDataOfCustomers} from "./7-1_encapsulateNestedRecord.js";
+import {getCustomerData, getRawDataOfCustomers, setRawDataOfCustomers} from "./7-1_encapsulateNestedRecord.js";
 
 describe("7-1중첩예제", () => {
     it("쓰기", () => {

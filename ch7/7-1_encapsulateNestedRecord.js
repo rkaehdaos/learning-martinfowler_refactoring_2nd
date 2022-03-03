@@ -1,11 +1,17 @@
+import _ from "lodash";
+
 class CustomerData {
     constructor(data) {
         this._data = data;
     }
+
     setUsage(customerID, year, month, amount) {
         this._data[customerID].usages[year][month] = amount;
     }
 
+    get rawData() {
+        return _.cloneDeep(this._data);
+    }
 }
 
 let customerData_data = {
@@ -47,7 +53,16 @@ let customerData_data = {
 
 let customerData = new CustomerData(customerData_data);
 
-function getCustomerData() { return customerData; }
-function getRawDataOfCustomers() { return customerData._data; }
-function setRawDataOfCustomers(arg) { customerData = new CustomerData(arg); }
-export {customerData, getRawDataOfCustomers, setRawDataOfCustomers,getCustomerData};
+function getCustomerData() {
+    return customerData;
+}
+
+function getRawDataOfCustomers() {
+    return customerData.rawData;
+}
+
+function setRawDataOfCustomers(arg) {
+    customerData = new CustomerData(arg);
+}
+
+export {getRawDataOfCustomers, setRawDataOfCustomers, getCustomerData};
