@@ -28,8 +28,8 @@ public class CalcOrderCountInJson {
         File inputFile = CalcOrderCountInJson.getFile(filename);
         ObjectMapper mapper = new ObjectMapper();
         Order[] orders = mapper.readValue(inputFile, Order[].class);
-        boolean onlyCountReady = Stream.of(args).anyMatch(arg -> "-r".equals(arg));
-        if (onlyCountReady)
+        commandLine.onlyCountReady = Stream.of(args).anyMatch(arg -> "-r".equals(arg));
+        if (commandLine.onlyCountReady)
             return Stream.of(orders).filter(o -> "ready".equals(o.getStatus())).count();
         else
             return orders.length;
@@ -45,5 +45,7 @@ public class CalcOrderCountInJson {
         }
     }
 
-    private static class CommandLine {}
+    private static class CommandLine {
+        boolean onlyCountReady;
+    }
 }
