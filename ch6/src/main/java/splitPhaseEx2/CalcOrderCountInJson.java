@@ -30,7 +30,7 @@ public class CalcOrderCountInJson {
         }
     }
 
-    static void run(){
+    static void run(String[] args){
         if(args.length==0) throw new RuntimeException("파일명을 입력하세요");
         String filename = args[args.length - 1];
         File inputFile = CalcOrderCountInJson.getFile(filename);
@@ -44,12 +44,8 @@ public class CalcOrderCountInJson {
         else
             System.out.println(orders.length);
 
-    } catch (Exception e) {
-        System.err.println(e);
-        System.exit(1);
     }
 
-    }
 
     public static File getFile(String fileName) throws IOException {
         ClassLoader classLoader = CalcOrderCountInJson.class.getClassLoader();
