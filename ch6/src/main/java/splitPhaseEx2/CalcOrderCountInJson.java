@@ -21,6 +21,11 @@ public class CalcOrderCountInJson {
         if(args.length==0) throw new RuntimeException("파일명을 입력하세요");
         String filename = args[args.length - 1];
         File inputFile = CalcOrderCountInJson.getFile(filename);
+        return countOrders(args, filename);
+    }
+
+    private static long countOrders(String[] args, String filename) throws IOException{
+        File inputFile = CalcOrderCountInJson.getFile(filename);
 
         ObjectMapper mapper = new ObjectMapper();
         Order[] orders = mapper.readValue(inputFile, Order[].class);
