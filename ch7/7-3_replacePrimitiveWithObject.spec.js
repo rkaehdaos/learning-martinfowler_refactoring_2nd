@@ -12,7 +12,7 @@ describe('7-3기본형객체형바꾸기',() => {
         expect(orders).to.length(5);
 
         //when
-        const highPriorityCount = orders.filter(o => "high" === o.priority || "rush"===o.priority ).length;
+        const highPriorityCount = orders.filter(o => "high" === o.prioritString || "rush"===o.prioritString ).length;
         //then
         expect(highPriorityCount).equals(3);
     });
