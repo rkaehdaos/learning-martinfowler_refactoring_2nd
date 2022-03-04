@@ -9,6 +9,7 @@ class Order {
         this.orderNum = data.orderNum;
     }
 
+    get priority() {return this._priority;}
     get prioritString() {return this._priority.toString();}
     set priority(aString) {this._priority = new Priority(aString);}
     get orderNum() {return this._orderNum;}
