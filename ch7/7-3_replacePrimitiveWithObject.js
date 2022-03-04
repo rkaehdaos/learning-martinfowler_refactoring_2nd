@@ -1,5 +1,8 @@
 class Priority {
-    constructor(value) {this._value = value;}
+    constructor(value) {
+        if (value instanceof Priority) return value;
+        this._value = value;
+    }
     toString() {return this._value;}
 }
 
@@ -16,4 +19,4 @@ class Order {
     set orderNum(value) {this._orderNum = value;}
 }
 
-export {Order};
+export {Order, Priority};
