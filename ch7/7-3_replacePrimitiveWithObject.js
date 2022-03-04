@@ -10,7 +10,7 @@ class Order {
     }
 
     get priority() {return this._priority;}
-    get prioritString() {return this._priority.toString();}
+    get priorityString() {return this._priority.toString();}
     set priority(aString) {this._priority = new Priority(aString);}
     get orderNum() {return this._orderNum;}
     set orderNum(value) {this._orderNum = value;}
