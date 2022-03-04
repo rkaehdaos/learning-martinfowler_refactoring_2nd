@@ -11,7 +11,6 @@ describe('7-3기본형객체형바꾸기',() => {
         //then
         expect(orders).to.length(5);
 
-
         //when
         const highPriorityCount = orders.filter(o => "high" === o.priority || "rush"===o.priority ).length;
         //then
