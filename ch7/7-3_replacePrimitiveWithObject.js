@@ -1,7 +1,7 @@
 class Order {
     constructor(data) {
-        this._priority = data.priority;
-        this._orderNum = data.orderNum;
+        this.priority = data.priority;
+        this.orderNum = data.orderNum;
     }
 
     get priority() {return this._priority;}
