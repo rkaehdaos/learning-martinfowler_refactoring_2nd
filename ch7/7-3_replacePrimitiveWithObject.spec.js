@@ -4,7 +4,7 @@ describe('7-3기본형객체형바꾸기',() => {
     it('test1', () => {
         //given
         let orders = [];
-        let orderList = ["high", "high", "rush", "row", "row"];
+        let orderList = ["high", "high", "rush", "low", "low"];
 
         //when
         orderList.map((value, index) => orders.push(new Order({"priority": value, "orderNum":index})));
@@ -19,7 +19,7 @@ describe('7-3기본형객체형바꾸기',() => {
     it('바뀐 settter 테스트', () => {
         //given
         let orders = [];
-        let orderList = ["high", "high", "rush", "row", "row"];
+        let orderList = ["high", "high", "rush", "low", "low"];
 
         //when
         orderList.map((value, index) => orders.push(new Order({"priority": new Priority(value), "orderNum":index})));
