@@ -4,6 +4,6 @@ describe('7-2컬렉션캡슐화',() => {
     it('기본테스트', () => {
         const aPerson = new Person('Ahn');
         const numCourses = aPerson.courses.length;
-        expect(numCourses).equals(1);
+        expect(numCourses).equals(0);
     });
 } )
