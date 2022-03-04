@@ -13,9 +13,9 @@ describe('7-2컬렉션캡슐화', () => {
         const aCoursesNames = ["korean", "math", "english", "social", "science"];
 
         //when
-        aPerson.courses = aCoursesNames.map(name => new Course(name, false));
-        console.log(aPerson.courses);
+        aCoursesNames.map(name => aPerson.addCourse(new Course(name, false)));
 
+        //then
         const numCourses = aPerson.courses.length;
         expect(numCourses).equals(5);
     });
@@ -26,10 +26,10 @@ describe('7-2컬렉션캡슐화', () => {
 
         //when
         for(const name of aCoursesNames)
-            aPerson.courses.push(new Course(name,false));
+            aPerson.addCourse(new Course(name,false));
 
-        console.log(aPerson.courses);
 
+        //then
         const numCourses = aPerson.courses.length;
         expect(numCourses).equals(5);
     });
