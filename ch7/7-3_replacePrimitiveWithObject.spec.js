@@ -1,7 +1,7 @@
 import {expect} from "chai";
 import {Order,Priority} from "./7-3_replacePrimitiveWithObject.js";
 describe('7-3기본형객체형바꾸기',() => {
-    it('test1', () => {
+    it('higherThan Test', () => {
         //given
         let orders = [];
         let orderList = ["high", "high", "rush", "low", "low"];
@@ -12,7 +12,7 @@ describe('7-3기본형객체형바꾸기',() => {
         expect(orders).to.length(5);
 
         //when
-        const highPriorityCount = orders.filter(o => "high" === o.priorityString || "rush"===o.priorityString ).length;
+        const highPriorityCount = orders.filter(o => o.priority.higherThan(new Priority("normal")) ).length;
         //then
         expect(highPriorityCount).equals(3);
     });
