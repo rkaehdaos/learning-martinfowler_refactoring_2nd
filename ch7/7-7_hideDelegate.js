@@ -12,7 +12,6 @@ class Department {
     set chargeCode(arg) {this._chargeCode = arg;}
     get manager() {return this._manager;}
     set manager(arg) {this._manager = arg;}
-
 }
 
 export {Person, Department};
