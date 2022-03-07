@@ -12,7 +12,7 @@ describe('7-8위임 숨기기', () => {
         aPerson.department = aDepartment;
 
         //when
-        const managerResult = aPerson.manager; //요기
+        const managerResult = aPerson.department.manager
 
         //then
         expect(managerResult).equals('David');
