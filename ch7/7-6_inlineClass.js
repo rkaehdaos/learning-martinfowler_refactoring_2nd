@@ -8,6 +8,7 @@ class TrackingInformation {
     }
 }
 class Shipment {
+    set shippingCompany(arg) {this._trackingInformation.shippingCompany=arg}
     get trackingInfo(){return this._trackingInformation.display;}
     get trackingInformation() {return this._trackingInformation;}
     set trackingInformation(aTrackingInformation) {
