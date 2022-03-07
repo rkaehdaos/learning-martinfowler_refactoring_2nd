@@ -12,10 +12,10 @@ class Person {
     get name() {return this._name;}
     set name(arg) {this._name=arg;}
     get telephoneNumber() {return this._telephoneNumber.toString();}
-    get areaCode() {return this._telephoneNumber.areaCode;}
-    set areaCode(arg) {this._telephoneNumber.areaCode=arg;}
-    get number() {return this._telephoneNumber.number}
-    set number(arg) {this._telephoneNumber.number=arg;}
+    get officeAreaCode() {return this._telephoneNumber.areaCode;}
+    set officeAreaCode(arg) {this._telephoneNumber.areaCode=arg;}
+    get officeNumber() {return this._telephoneNumber.number}
+    set officeNumber(arg) {this._telephoneNumber.number=arg;}
 }
 
 export {Person};
