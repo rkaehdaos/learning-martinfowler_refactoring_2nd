@@ -30,6 +30,17 @@ class AccountType {
     get isPremium() {
         return this._type === 'Premium';
     }
+
+    overdraftCharge() {
+        if (this.type.isPremium) {
+            const baseCharge = 10;
+            if (this._daysOverdrawn <= 7)
+                return baseCharge;
+            else
+                return baseCharge + (this._daysOverdrawn - 7) * 0.85;
+        } else
+            return this._daysOverdrawn * 1.75;
+    }
 }
 
 export {Account,AccountType};
