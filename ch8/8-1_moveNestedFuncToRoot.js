@@ -39,7 +39,7 @@ function trackSummary(points) {
     // 총 시간 계산
     function calculateTime() {return 300;} //대충 5시간
 }
-function top_calculateDistance() { //새로운 임시 이름
+function top_calculateDistance(points) { //새로운 임시 이름
     let result = 0;
     for (let i = 1; i < points.length; i++) {
         result += distance(points[i - 1], points[i]);
