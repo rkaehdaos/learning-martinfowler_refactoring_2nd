@@ -7,8 +7,10 @@ class Account {
     get interestRate() {return this._interestRate;}
 }
 class AccountType {
-    constructor(nameString) {
+    constructor(nameString,interestRate) {
         this._name = nameString;
+        this._interestRate = interestRate;
     }
+    get interestRate() {return this._interestRate;}
 }
 export {Account,AccountType};
