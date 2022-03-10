@@ -3,16 +3,12 @@ class Account {
         this.type = accountType;
         this._daysOverdrawn = daysOverdrawn;
     }
+
     // 은행 이자 계산
     get bankCharge() {
         let result = 4.5;
-        if (this._daysOverdrawn > 0) result += this.overdraftCharge;
+        if (this._daysOverdrawn > 0) result += this.type.overdraftCharge(this._daysOverdrawn);
         return result;
-    }
-
-    // 초과 인출 이자 계산
-    get overdraftCharge() {
-        return this.type.overdraftCharge(this._daysOverdrawn);
     }
 }
 
@@ -20,6 +16,7 @@ class AccountType {
     constructor(type) {
         this._type = type;
     }
+
     get isPremium() {
         return this._type === 'Premium';
     }
@@ -36,4 +33,4 @@ class AccountType {
     }
 }
 
-export {Account,AccountType};
+export {Account, AccountType};

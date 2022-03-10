@@ -1,8 +1,8 @@
 import {expect} from "chai";
-import {Account,AccountType} from "./8-1_moveFuncToOtherClass.js";
+import {Account, AccountType} from "./8-1_moveFuncToOtherClass.js";
 
 describe('8-1다른클래스로옮기기', () => {
-    it('초과 없으면 모든 계좌는 4.5', () =>{
+    it('초과 없으면 모든 계좌는 4.5', () => {
 
         expect(new Account(new AccountType('NonPremium'), 0).bankCharge).equals(4.5);
         expect(new Account(new AccountType('Premium'), 0).bankCharge).equals(4.5);
