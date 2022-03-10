@@ -1,10 +1,7 @@
-import assert from "assert";
 class Account {
-    constructor(number, type, interestRate) {
+    constructor(number, type) {
         this._number = number;
         this._type = type;
-        assert(interestRate === this._type.interestRate);
-        this._interestRate = interestRate;
     }
     get interestRate() {return this._type.interestRate;}
 }
