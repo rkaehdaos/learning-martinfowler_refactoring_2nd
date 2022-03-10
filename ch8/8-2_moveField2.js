@@ -6,7 +6,7 @@ class Account {
         assert(interestRate === this._type.interestRate);
         this._interestRate = interestRate;
     }
-    get interestRate() {return this._interestRate;}
+    get interestRate() {return this._type.interestRate;}
 }
 class AccountType {
     constructor(nameString,interestRate) {
