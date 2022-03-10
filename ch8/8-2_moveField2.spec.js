@@ -3,7 +3,8 @@ import {Account,AccountType} from "./8-2_moveField2.js";
 
 describe('8-2공유객체로이동', () => {
     it('basic', () => {
-        const account = new Account(15000, 'A', 2.5);
+        const accountTypeA = new AccountType('A', 2.5);
+        const account = new Account(15000, accountTypeA, 2.5);
         expect(account.interestRate).equals(2.5);
     });
 });
