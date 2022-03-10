@@ -9,6 +9,7 @@ function trackSummary(points) {
     };
 
     function calculateDistance() {
+        /*
         let result = 0;
         for (let i = 1; i < points.length; i++)
             result += distance(points[i - 1], points[i]);
@@ -30,6 +31,8 @@ function trackSummary(points) {
             return result;
         }
         function radians(degrees) {return degrees * Math.PI / 180;}
+        */
+        return top_calculateDistance(points);
     }
 
     // 총 시간 계산
@@ -60,6 +63,6 @@ function top_calculateDistance(points) { //새로운 임시 이름
     function radians(degrees) {return degrees * Math.PI / 180;}
 }
 
-export {trackSummary,top_calculateDistance};
+export {trackSummary};
 
 
