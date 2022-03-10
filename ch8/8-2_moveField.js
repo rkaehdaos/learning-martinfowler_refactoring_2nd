@@ -1,8 +1,8 @@
 class Customer {
     constructor(name, discountRate) {
         this._name = name;
-        this._setDiscountRate(discountRate); //할인율
         this._contract = new CustomerContract(this.dateToday());
+        this._setDiscountRate(discountRate); //할인율
     }
 
     get discountRate() {return this._discountRate;}
