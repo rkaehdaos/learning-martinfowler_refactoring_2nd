@@ -32,7 +32,7 @@ class AccountType {
     }
 
     overdraftCharge() {
-        if (this.type.isPremium) {
+        if (this.isPremium) {
             const baseCharge = 10;
             if (this._daysOverdrawn <= 7)
                 return baseCharge;
