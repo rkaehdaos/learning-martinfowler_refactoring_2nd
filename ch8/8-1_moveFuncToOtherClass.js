@@ -31,15 +31,15 @@ class AccountType {
         return this._type === 'Premium';
     }
 
-    overdraftCharge() {
+    overdraftCharge(daysOverdrawn) {
         if (this.isPremium) {
             const baseCharge = 10;
-            if (this._daysOverdrawn <= 7)
+            if (daysOverdrawn <= 7)
                 return baseCharge;
             else
-                return baseCharge + (this._daysOverdrawn - 7) * 0.85;
+                return baseCharge + (daysOverdrawn - 7) * 0.85;
         } else
-            return this._daysOverdrawn * 1.75;
+            return daysOverdrawn * 1.75;
     }
 }
 
