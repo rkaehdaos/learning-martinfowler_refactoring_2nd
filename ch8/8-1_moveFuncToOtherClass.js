@@ -12,6 +12,8 @@ class Account {
 
     // 초과 인출 이자 계산
     get overdraftCharge() {
+/*
+
         if (this.type.isPremium) {
             const baseCharge = 10;
             if (this._daysOverdrawn <= 7)
@@ -20,6 +22,9 @@ class Account {
                 return baseCharge + (this._daysOverdrawn - 7) * 0.85;
         } else
             return this._daysOverdrawn * 1.75;
+*/
+        return this.type.overdraftCharge(this);
+
     }
 }
 
@@ -31,15 +36,15 @@ class AccountType {
         return this._type === 'Premium';
     }
 
-    overdraftCharge() {
+    overdraftCharge(account) {
         if (this.isPremium) {
             const baseCharge = 10;
-            if (this.daysOverdrawn <= 7)
+            if (account._daysOverdrawn <= 7)
                 return baseCharge;
             else
-                return baseCharge + (this._daysOverdrawn - 7) * 0.85;
+                return baseCharge + (account._daysOverdrawn - 7) * 0.85;
         } else
-            return this._daysOverdrawn * 1.75;
+            return account._daysOverdrawn * 1.75;
     }
 }
 
