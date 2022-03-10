@@ -12,14 +12,7 @@ class Account {
 
     // 초과 인출 이자 계산
     get overdraftCharge() {
-        if (this.type.isPremium) {
-            const baseCharge = 10;
-            if (this._daysOverdrawn <= 7)
-                return baseCharge;
-            else
-                return baseCharge + (this._daysOverdrawn - 7) * 0.85;
-        } else
-            return this._daysOverdrawn * 1.75;
+        return this.type.overdraftCharge(this._daysOverdrawn);
     }
 }
 
