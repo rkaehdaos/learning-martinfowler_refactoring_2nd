@@ -10,9 +10,15 @@ function renderPerson(person) {
 function photoDiv(p) {
     return [
         "<div>",
+        zznew(p),
+        "</div>",
+    ].join("\n");
+}
+
+function zznew(p) {
+    return [
         `<p>title: ${p.title}</p>`,
         emitPhotoData(p),
-        "</div>",
     ].join("\n");
 }
 function emitPhotoData(aPhoto) {
