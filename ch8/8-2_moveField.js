@@ -5,8 +5,8 @@ class Customer {
         this._setDiscountRate(discountRate); //할인율
     }
 
-    get discountRate() {return this._discountRate;}
-    _setDiscountRate(aNumber) {this._discountRate=aNumber;}
+    get discountRate() {return this._contract.discountRate;}
+    _setDiscountRate(aNumber) {this._contract.discountRate=aNumber;}
 
     becomePreferred() {
         this._setDiscountRate(this.discountRate + 0.03);
