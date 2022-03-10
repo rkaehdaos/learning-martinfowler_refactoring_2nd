@@ -1,5 +1,5 @@
 import {expect} from "chai";
-import {trackSummary, distance2} from "./8-1_moveNestedFuncToRoot.js";
+import {trackSummary} from "./8-1_moveNestedFuncToRoot.js";
 
 describe('8-1', () => {
     it('테스트', () => {
