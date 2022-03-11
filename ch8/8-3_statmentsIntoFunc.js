@@ -2,8 +2,7 @@ function renderPerson(person) {
     const result = [];
     result.push(`<p>${person.name}</p>`);
     result.push(renderPhoto(person.photo));
-    result.push(`<p>title: ${person.photo.title}</p>`); //제목 출력
-    result.push(emitPhotoData(person.photo));
+    result.push(zznew(person.photo));
     return result.join("\n");
 }
 
