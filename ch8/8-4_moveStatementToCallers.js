@@ -17,11 +17,6 @@ function listRecentPhotos(outStream, photos) {
             outStream.write("</div>\n");
         });
 }
-// 피호출부
-function emitPhotoData(outStream, photo) {
-    zztmp(outStream, photo);
-    outStream.write(`<p>location: ${photo.location}</p>\n`);
-}
 
 function zztmp(outStream, photo) {
     outStream.write(`<p>title: ${photo.title}</p>\n`);
