@@ -3,9 +3,6 @@ import {Writable} from "stream";
 import Util from "util";
 import {listRecentPhotos, renderPerson} from "./8-4_moveStatementToCallers.js";
 
-
-
-
 describe('8-4', () => {
     it('renderPerson', () => {
         const aPerson = {
