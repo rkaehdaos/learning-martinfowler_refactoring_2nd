@@ -11,12 +11,12 @@ export function distanceTravelled(scenario, time) {
     }
     return result;
 
-    function calcDistanceFromAccAndTime(acc, time, currentVelocity = 0) {
-        return currentVelocity * time + 0.5 * acc * time * time;
-    }
-
-    function calcAccFromForceAndMass(force, mass, currentAcc=0){
-        return currentAcc + force / mass;
-    }
-
 }
+function calcDistanceFromAccAndTime(acc, time, currentVelocity = 0) {
+    return currentVelocity * time + 0.5 * acc * time * time;
+}
+
+function calcAccFromForceAndMass(force, mass, currentAcc=0){
+    return currentAcc + force / mass;
+}
+
