@@ -1,13 +1,13 @@
 export function distanceTravelled(scenario, time) {
 
-    const primaryAcceration = scenario.primaryForce / scenario.mass;
+    const primaryAcceleration = scenario.primaryForce / scenario.mass;
     let primaryTime = Math.min(time, scenario.delay);
-    let result = calcDistanceFromAccAndTime(primaryAcceration, primaryTime);
+    let result = calcDistanceFromAccAndTime(primaryAcceleration, primaryTime);
     let secondaryTime = time - scenario.delay;
     if (secondaryTime > 0) {
-        let primaryVelocity = primaryAcceration * scenario.delay;
-        const secondaryAcceration = (scenario.primaryForce + scenario.secondaryForce) / scenario.mass;
-        result += primaryVelocity * secondaryTime + calcDistanceFromAccAndTime(secondaryAcceration, secondaryTime);
+        let primaryVelocity = primaryAcceleration * scenario.delay;
+        const secondaryAcceleration = (scenario.primaryForce + scenario.secondaryForce) / scenario.mass;
+        result += primaryVelocity * secondaryTime + calcDistanceFromAccAndTime(secondaryAcceleration, secondaryTime);
     }
     return result;
 
