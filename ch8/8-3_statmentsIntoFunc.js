@@ -21,15 +21,6 @@ function zznew(p) {
         `<p>date: ${p.date.toDateString()}</p>`
     ].join("\n");
 }
-function emitPhotoData(aPhoto) {
-    const result = [];
-    result.push(`<p>location: ${aPhoto.location}</p>`);
-    result.push(`<p>date: ${aPhoto.date.toDateString()}</p>`);
-    return result.join("\n");
-}
-
-function renderPhoto(aPhoto) {
-    return "";
-}
+function renderPhoto(aPhoto) {return "";}
 
 export {renderPerson, photoDiv};
