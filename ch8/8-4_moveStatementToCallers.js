@@ -2,7 +2,8 @@
 function renderPerson(outStream, person) {
     outStream.write(`<p>${person.name}</p>\n`);
     renderPhoto(outStream, person.photo);
-    emitPhotoData(outStream, person.photo);
+    zztmp(outStream, person.photo);
+    outStream.write(`<p>location: ${person.photo.location}</p>\n`);
 }
 
 // caller2
