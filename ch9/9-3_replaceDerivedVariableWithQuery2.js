@@ -13,6 +13,11 @@ class ProductionPlan {
         this._productionAccumulator += anAdjustment.amount;
     }
 
+    get calculatedProductionAccumulator() {
+        return this._adjustments
+            .reduce((sum, a) => sum + a.amount, 0);
+    }
 }
+
 
 export {ProductionPlan};
