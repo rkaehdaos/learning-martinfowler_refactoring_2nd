@@ -1,3 +1,5 @@
+import {assert} from "chai";
+
 class ProductionPlan {
     constructor(production) {
         this._initialProduction = production;
@@ -5,7 +7,10 @@ class ProductionPlan {
         this._adjustments = [];
     }
 
-    get production() {return this._initialProduction+this._productionAccumulator;}
+    get production() {
+        assert(this._productionAccumulator === this.calculatedProductionAccumulator);
+        return this._initialProduction + this._productionAccumulator;
+    }
 
     // 책에는 안나왔지만
     applyAdjustment(anAdjustment) {
