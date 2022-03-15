@@ -1,5 +1,3 @@
-import {assert} from "chai";
-
 class ProductionPlan {
     constructor() {
         this._production = 0;
@@ -8,18 +6,13 @@ class ProductionPlan {
 
     get production() {
 
-        return this.calcalatedProduction;
+        return this._adjustments.reduce((sum, a) => sum + a.amount, 0);
     }
 
     applyAdjustment(anAdjustment) {
         this._adjustments.push(anAdjustment);
         this._production += anAdjustment.amount;
     }
-
-    get calcalatedProduction() {
-        return this._adjustments.reduce((sum, a) => sum + a.amount, 0);
-    }
-
 }
 
 export {ProductionPlan};

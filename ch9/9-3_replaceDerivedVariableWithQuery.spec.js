@@ -10,8 +10,6 @@ describe('9-3 파생변수를 질의함수로 바꾸기 - 기본 빈 함수', ()
         prodPlan.applyAdjustment({name: '조정1', amount: 1000});
 
         // then
-        console.log(prodPlan.production);
-        console.log(prodPlan.calcalatedProduction);
         expect(prodPlan.production).equals(1000);
     });
 });
