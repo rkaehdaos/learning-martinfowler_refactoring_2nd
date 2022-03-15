@@ -1,6 +1,6 @@
 class ProductionPlan {
     constructor() {
-        this._adjustments = ['dafault'];
+        this._adjustments = [{name:'기본값1',amount:70},{name:'기본값1',amount:30}];
         this._production = 100;
     }
 
