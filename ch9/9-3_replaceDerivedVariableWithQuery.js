@@ -1,5 +1,3 @@
-import {assert} from "chai";
-
 class ProductionPlan {
     constructor() {
         this._adjustments = [{name: '기본값1', amount: 70}, {name: '기본값1', amount: 30}];
@@ -7,8 +5,7 @@ class ProductionPlan {
     }
 
     get production() {
-        assert(this._production === this.calculatedProduction);
-        return this._production;
+        return this.calculatedProduction;
     }
 
     applyAdjustment(anAdjustment) {
