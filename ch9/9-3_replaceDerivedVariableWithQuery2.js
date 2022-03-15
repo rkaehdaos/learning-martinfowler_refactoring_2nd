@@ -11,6 +11,11 @@ class ProductionPlan {
         this._production += anAdjustment.amount;
     }
 
+    //앞과 같은 calc
+    get calcaulatedProduction() {
+        return this._adjustments.reduce((sum, a) => sum + a.amount, 0);
+    }
+
 
 }
 
