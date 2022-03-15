@@ -7,7 +7,7 @@ class ProductionPlan {
     }
 
     get production() {
-        // assert(this._production === this.calcaulatedProduction);
+        assert(this._production === this.calcaulatedProduction);
         return this._production;
     }
 
