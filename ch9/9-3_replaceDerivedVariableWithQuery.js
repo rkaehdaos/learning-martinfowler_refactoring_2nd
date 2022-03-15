@@ -1,18 +1,11 @@
 class ProductionPlan {
-    constructor() {
-        this._production = 0;
-        this._adjustments = [];
-    }
-
+    constructor() {this._adjustments = [];}
     get production() {
-
-        return this._adjustments.reduce((sum, a) => sum + a.amount, 0);
+        return this._adjustments
+            .reduce((sum, a) => sum + a.amount, 0);
     }
 
-    applyAdjustment(anAdjustment) {
-        this._adjustments.push(anAdjustment);
-        this._production += anAdjustment.amount;
-    }
+    applyAdjustment(anAdjustment) {this._adjustments.push(anAdjustment);}
 }
 
 export {ProductionPlan};
