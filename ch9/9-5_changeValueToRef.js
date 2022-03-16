@@ -19,10 +19,14 @@ export function findCustomer(id) {
 
 class Order {
     constructor(data) {
-        this._number=data.number;
-        this._customer = new Customer(data.customer);
+        this._number = data.number;
+        // this._customer = new Customer(data.customer);
+        this._customer = registerCustomer(data.customer);
     }
-    get customer() {return this._customer;}
+
+    get customer() {
+        return this._customer;
+    }
 }
 
 class Customer {
@@ -30,4 +34,4 @@ class Customer {
     get id() {return this._id;}
 }
 
-export {Order};
+export {Order, _repositoryData,initialize,registerCustomer,Customer,findCustomer};
