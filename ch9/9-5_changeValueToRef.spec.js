@@ -13,5 +13,6 @@ describe('9-5 값을 참조로 바꾸기', () => {
 
         // then
         expect(order1.customer.id).to.equals("123");
+        expect(order3.customer.id).to.equals("123");
     });
 });
