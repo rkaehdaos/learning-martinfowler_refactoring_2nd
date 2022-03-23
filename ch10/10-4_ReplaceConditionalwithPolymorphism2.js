@@ -41,13 +41,13 @@ class Rating {
         let result = 2;
         if (this.voyage.zone === "중국") result += 1;
         if (this.voyage.zone === "동인도") result += 1;
+        result += this.historyLengthFactor;
         result += this.voyageAndHistoryLengthFactor;
         return result;
     }
 
     get voyageAndHistoryLengthFactor() {
         let result = 0;
-        result += this.historyLengthFactor;
         if (this.voyage.length > 14) result -= 1;
         return result;
     }
