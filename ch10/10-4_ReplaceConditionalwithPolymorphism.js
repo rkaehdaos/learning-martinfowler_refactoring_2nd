@@ -70,5 +70,4 @@ class AfricanSwallow extends Bird {
 class NorwegianBlueParrot extends Bird {
 }
 
-
 export {plumages, speeds};

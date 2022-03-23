@@ -40,5 +40,4 @@ describe('10-4 조건부 로직을 다형성으로 바꾸기', () => {
         expect(birdsSpeedList.get('bird6')).to.equal(0);
     });
 
-
 });
