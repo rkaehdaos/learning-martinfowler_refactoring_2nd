@@ -39,7 +39,7 @@ class Bird {
             case '유럽 제비':
                 throw "오류 발생";
             case '아프리카 제비':
-                return (this.numberOfCoconuts > 2) ? "지쳤다" : "보통이다";
+                throw "오류 발생";
             case '노르웨이 파랑 앵무':
                 return (this.voltage > 100) ? "그을렸다" : "예쁘다";
             default:
@@ -52,7 +52,7 @@ class Bird {
             case '유럽 제비':
                 throw "오류 발생";
             case '아프리카 제비':
-                return 40 - 2 * this.numberOfCoconuts;
+                throw "오류 발생";
             case '노르웨이 파랑 앵무':
                 return (this.isNailed) ? 0 : 10 + this.voltage / 10;
             default:
@@ -67,6 +67,8 @@ class EuropeanSwallow extends Bird {
 }
 
 class AfricanSwallow extends Bird {
+    get plumage() {return (this.numberOfCoconuts > 2) ? "지쳤다" : "보통이다";}
+    get airSpeedVelocity() {return 40 - 2 * this.numberOfCoconuts;}
 }
 
 class NorwegianBlueParrot extends Bird {
