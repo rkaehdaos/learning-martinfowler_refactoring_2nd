@@ -1,7 +1,7 @@
 import {expect} from "chai";
 import {plumages, speeds} from "./10-4_ReplaceConditionalwithPolymorphism.js";
 
-describe('10-4', () => {
+describe('10-4 조건부 로직을 다형성으로 바꾸기', () => {
     const birdList = [
         {name: 'bird1', type: '까마귀'},
         {name: 'bird2', type: '유럽 제비'},
