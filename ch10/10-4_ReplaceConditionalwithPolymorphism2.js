@@ -18,7 +18,7 @@ function captainHistoryRisk(voyage, history) { // 선장의 행해 이력 위험
     let result = 1;
     if (history.length < 5) result += 4;
     result += history.filter(v => v.profit < 0).length;
-    if (voyage.zone === "중국" && hasChina(history)) result -= 2;
+    if (voyage.zone === "중국" && hasChina(history)) result -= 2; // 주목할 곳 1
     return Math.max(result, 0);
 }
 
@@ -30,7 +30,7 @@ function voyageProfitFactor(voyage, history) { // 수익 요인
     let result = 2;
     if (voyage.zone === "중국") result += 1;
     if (voyage.zone === "동인도") result += 1;
-    if (voyage.zone === "중국" && hasChina(history)) {
+    if (voyage.zone === "중국" && hasChina(history)) { // 주목할 곳 2
         result += 3;
         if (history.length > 10) result += 1;
         if (voyage.length > 12) result += 1;
