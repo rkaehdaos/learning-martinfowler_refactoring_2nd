@@ -46,4 +46,9 @@ class Bird {
     }
 }
 
+class EuropeanSwallow extends Bird{}
+class AfricanSwallow extends Bird{}
+class NorwegianBlueParrot extends Bird{}
+
+
 export {plumages, speeds};
