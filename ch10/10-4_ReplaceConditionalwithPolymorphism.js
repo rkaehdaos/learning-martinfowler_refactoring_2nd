@@ -32,33 +32,8 @@ class Bird {
     constructor(birdObject) {
         Object.assign(this, birdObject);
     }
-
-
-    get plumage() {
-        switch (this.type) {
-            case '유럽 제비':
-                throw "오류 발생";
-            case '아프리카 제비':
-                throw "오류 발생";
-            case '노르웨이 파랑 앵무':
-                return (this.voltage > 100) ? "그을렸다" : "예쁘다";
-            default:
-                return "알 수 없다";
-        }
-    }
-
-    get airSpeedVelocity() {
-        switch (this.type) {
-            case '유럽 제비':
-                throw "오류 발생";
-            case '아프리카 제비':
-                throw "오류 발생";
-            case '노르웨이 파랑 앵무':
-                return (this.isNailed) ? 0 : 10 + this.voltage / 10;
-            default:
-                return null;
-        }
-    }
+    get plumage() {return "알 수 없다";}
+    get airSpeedVelocity() {return null;}
 }
 
 class EuropeanSwallow extends Bird {
@@ -72,6 +47,8 @@ class AfricanSwallow extends Bird {
 }
 
 class NorwegianBlueParrot extends Bird {
+    get plumage() {return (this.voltage > 100) ? "그을렸다" : "예쁘다";}
+    get airSpeedVelocity() {return (this.isNailed) ? 0 : 10 + this.voltage / 10;}
 }
 
 export {plumages, speeds};
