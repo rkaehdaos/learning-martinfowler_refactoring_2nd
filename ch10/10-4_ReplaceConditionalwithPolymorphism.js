@@ -1,17 +1,9 @@
 function plumages(birds) {
-    return new Map(birds.map(b => [b.name, plumage(b)]));
+    return new Map(birds.map(b => [b.name, createBird(b).plumage]));
 }
 
 function speeds(birds) {
-    return new Map(birds.map(b => [b.name, airSpeedVelocity(b)]));
-}
-
-function plumage(bird) { //깃털 상태
-    return createBird(bird).plumage;
-}
-
-function airSpeedVelocity(bird) { //비행 속도
-    return createBird(bird).airSpeedVelocity;
+    return new Map(birds.map(b => [b.name, createBird(b).airSpeedVelocity]));
 }
 
 // factory
