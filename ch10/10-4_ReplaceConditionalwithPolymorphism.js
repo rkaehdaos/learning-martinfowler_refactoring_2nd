@@ -7,11 +7,11 @@ function speeds(birds) {
 }
 
 function plumage(bird) { //깃털 상태
-    return new Bird(bird).plumage;
+    return createBird(bird).plumage;
 }
 
 function airSpeedVelocity(bird) { //비행 속도
-    return new Bird(bird).airSpeedVelocity;
+    return createBird(bird).airSpeedVelocity;
 }
 
 // factory
