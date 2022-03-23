@@ -31,3 +31,5 @@ function airSpeedVelocity(bird) { //비행 속도
             return null;
     }
 }
+
+export {plumages, speeds};
