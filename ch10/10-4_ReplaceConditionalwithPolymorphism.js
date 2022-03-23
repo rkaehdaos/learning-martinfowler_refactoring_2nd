@@ -50,7 +50,7 @@ class Bird {
     get airSpeedVelocity() {
         switch (this.type) {
             case '유럽 제비':
-                return 35;
+                throw "오류 발생";
             case '아프리카 제비':
                 return 40 - 2 * this.numberOfCoconuts;
             case '노르웨이 파랑 앵무':
@@ -63,6 +63,7 @@ class Bird {
 
 class EuropeanSwallow extends Bird {
     get plumage() {return "보통이다";}
+    get airSpeedVelocity() {return 35;}
 }
 
 class AfricanSwallow extends Bird {
