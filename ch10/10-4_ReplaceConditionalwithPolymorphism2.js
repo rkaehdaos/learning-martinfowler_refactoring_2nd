@@ -92,3 +92,5 @@ class Rating {
         return this.history.some(v => "중국" === v.zone);
     }
 }
+
+class ExperiencedChinaRating extends Rating {}
