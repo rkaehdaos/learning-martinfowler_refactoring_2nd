@@ -10,8 +10,9 @@ export class Site {
 
 
 export class Customer {
-    constructor(name) {
+    constructor(name, billingPlan) {
         this._name = name;
+        this._billingPlan = billingPlan;
     }
 
     get name() {
@@ -19,7 +20,7 @@ export class Customer {
     }
 
     get billingPlan() {
-
+        return this._billingPlan;
     }
 
     set billingPlan(arg) {
@@ -42,4 +43,20 @@ export function customerName(site) {
     else customerName = aCustomer.name;
 
     return customerName;
+}
+
+// 클라이언트2
+
+const registry = {
+    billingPlans: {
+        basic: "basic"
+    }
+};
+
+export function billingPlan(aCustomer) {
+    const plan = (aCustomer === "미확인 고객") ?
+        registry.billingPlans.basic
+        : aCustomer.billingPlan;
+
+    return plan;
 }
