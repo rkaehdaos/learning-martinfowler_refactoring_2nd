@@ -64,9 +64,7 @@ const registry = {
 };
 
 export function billingPlan(site) {
-    const aCustomer = site.customer;
-    const plan = aCustomer.billingPlan;
-    return plan;
+    return site.customer.billingPlan;
 }
 
 // 클라이언트 3
