@@ -32,6 +32,8 @@ export class Customer {
         return this._paymentHistory;
     }
 
+    get isUnknown() {return false;}
+
 }
 
 // 클라이언트1
