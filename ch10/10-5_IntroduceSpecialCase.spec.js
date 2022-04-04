@@ -29,9 +29,9 @@ describe('10-5특이케이스 - 클라이언트3 newPlan', () => {
 
 describe('10-5특이케이스 - 클라이언트4 연체', () => {
     it('미확인 고객 연체기간은 0', () => {
-        expect(weeksDelinquent("미확인 고객")).to.equal(0);
+        expect(weeksDelinquent(new Site("미확인 고객"))).to.equal(0);
     });
     it('미확인 고객이 아니면 정의된 연체기간 리턴', () => {
-        expect(weeksDelinquent(new Customer("Ahn", "Annual", {weeksDelinquentInLastYear: 2}))).to.equal(2);
+        expect(weeksDelinquent(new Site(new Customer("Ahn", "Annual", {weeksDelinquentInLastYear: 2})))).to.equal(2);
     });
 });

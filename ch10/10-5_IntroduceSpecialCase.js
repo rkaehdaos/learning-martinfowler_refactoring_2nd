@@ -84,7 +84,8 @@ export function changeBillingPlan(site, newPlan) {
 }
 
 // 클라이언트 4
-export function weeksDelinquent(aCustomer) {
+export function weeksDelinquent(site) {
+    const aCustomer = site.customer;
     const weeksDelinquent = (isUnknown(aCustomer)) ?
         0
         : aCustomer.paymentHistory.weeksDelinquentInLastYear;
