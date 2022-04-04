@@ -1,5 +1,5 @@
 import {expect} from "chai";
-import {customerName, Customer, Site, billingPlan, changeBillingPlan} from "./10-5_IntroduceSpecialCase.js";
+import {customerName, Customer, Site, billingPlan, changeBillingPlan,weeksDelinquent} from "./10-5_IntroduceSpecialCase.js";
 
 describe('10-5특이케이스 - 클라이언트1 customerName ', () => {
     it('미확인 고객은 거주자라고 나온다 ', () => {
@@ -24,5 +24,14 @@ describe('10-5특이케이스 - 클라이언트3 newPlan', () => {
     });
     it('미확인 고객이 아니라면 고객 플랜값을 주어진 newPlan으로 변경 ', () => {
         expect(changeBillingPlan(new Customer("Ahn", "Annual"), "basic").billingPlan).to.equal("basic");
+    });
+});
+
+describe('10-5특이케이스 - 클라이언트4 체납', () => {
+    it('미확인 고객 체납은 0', () => {
+        expect(weeksDelinquent("unknown")).to.equal(0);
+    });
+    it('미확인 고객이 아니면 정의된 weeksDelinquentInLastYear 리턴', () => {
+        expect(weeksDelinquent(new Customer("Ahn", "Annual", {weeksDelinquentInLastYear: 2}))).to.equal(2);
     });
 });

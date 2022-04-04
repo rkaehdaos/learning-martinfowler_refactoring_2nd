@@ -10,9 +10,10 @@ export class Site {
 
 
 export class Customer {
-    constructor(name, billingPlan) {
+    constructor(name, billingPlan, paymentHistory) {
         this._name = name;
         this._billingPlan = billingPlan;
+        this._paymentHistory = paymentHistory;
     }
 
     get name() {
@@ -28,13 +29,12 @@ export class Customer {
     }
 
     get paymentHistory() {
-
+        return this._paymentHistory;
     }
 
 }
 
 // 클라이언트1
-
 export function customerName(site) {
     const aCustomer = site.customer;
     // ... 수많은 코드 ...
@@ -46,7 +46,6 @@ export function customerName(site) {
 }
 
 // 클라이언트2
-
 const registry = {
     billingPlans: {
         basic: "basic"
@@ -66,4 +65,12 @@ export function billingPlan(aCustomer) {
 export function changeBillingPlan(aCustomer, newPlan) {
     if (aCustomer !== "unknown") aCustomer.billingPlan = newPlan;
     return aCustomer;
+}
+
+// 클라이언트 4
+export function weeksDelinquent(aCustomer) {
+    const weeksDelinquent = (aCustomer === "unknown") ?
+        0
+        : aCustomer.paymentHistory.weeksDelinquentInLastYear;
+    return weeksDelinquent;
 }
