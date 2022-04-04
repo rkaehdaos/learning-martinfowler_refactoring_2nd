@@ -24,7 +24,7 @@ export class Customer {
     }
 
     set billingPlan(arg) {
-
+        this._billingPlan = arg;
     }
 
     get paymentHistory() {
@@ -59,4 +59,11 @@ export function billingPlan(aCustomer) {
         : aCustomer.billingPlan;
 
     return plan;
+}
+
+// 클라이언트 3
+
+export function changeBillingPlan(aCustomer, newPlan) {
+    if (aCustomer !== "unknown") aCustomer.billingPlan = newPlan;
+    return aCustomer;
 }
