@@ -38,6 +38,7 @@ export class Customer {
 
 export class UnknownCustomer {
     get isUnknown() {return true;}
+    get name() {return "거주자";}
 }
 
 // 특이케이스 검사 코드
@@ -53,8 +54,7 @@ export function customerName(site) {
     const aCustomer = site.customer;
     // ... 수많은 코드 ...
     let customerName;
-    if (isUnknown(aCustomer)) customerName = "거주자";
-    else customerName = aCustomer.name;
+    customerName = aCustomer.name;
 
     return customerName;
 }
