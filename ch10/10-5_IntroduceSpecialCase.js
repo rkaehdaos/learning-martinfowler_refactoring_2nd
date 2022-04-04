@@ -39,6 +39,7 @@ export class Customer {
 export class UnknownCustomer {
     get isUnknown() {return true;}
     get name() {return "거주자";}
+    get billingPlan() {return "basic";}
 }
 
 // 특이케이스 검사 코드
@@ -64,10 +65,7 @@ const registry = {
 
 export function billingPlan(site) {
     const aCustomer = site.customer;
-    const plan = (isUnknown(aCustomer)) ?
-        registry.billingPlans.basic
-        : aCustomer.billingPlan;
-
+    const plan = aCustomer.billingPlan;
     return plan;
 }
 
