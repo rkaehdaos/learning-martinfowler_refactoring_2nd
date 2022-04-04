@@ -40,6 +40,13 @@ class UnknownCustomer {
     get isUnknown() {return true;}
 }
 
+// 특이케이스 검사 코드
+function isUnknown(arg) {
+    if (!((arg instanceof Customer) || (arg === "unknown")))
+        throw new Error(`investigate bad value: <${arg}>`);
+    return (arg === "unknown");
+}
+
 
 // 클라이언트1
 export function customerName(site) {
