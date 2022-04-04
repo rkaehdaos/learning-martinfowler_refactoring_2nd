@@ -77,7 +77,8 @@ export function billingPlan(site) {
 
 // 클라이언트 3
 
-export function changeBillingPlan(aCustomer, newPlan) {
+export function changeBillingPlan(site, newPlan) {
+    const aCustomer = site.customer;
     if (!isUnknown(aCustomer)) aCustomer.billingPlan = newPlan;
     return aCustomer;
 }
