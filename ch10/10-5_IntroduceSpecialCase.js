@@ -47,14 +47,6 @@ export class NullPaymentHistory {
     get weeksDelinquentInLastYear() {return 0;}
 }
 
-// 특이케이스 검사 코드
-function isUnknown(arg) {
-    if (!((arg instanceof Customer) || (arg instanceof UnknownCustomer)))
-        throw new Error(`잘못된 값과 비교: <${arg}>`);
-    return arg.isUnknown;
-}
-
-
 // 클라이언트1
 export function customerName(site) {
     // ... 수많은 코드 ...
@@ -62,18 +54,11 @@ export function customerName(site) {
 }
 
 // 클라이언트2
-const registry = {
-    billingPlans: {
-        basic: "basic"
-    }
-};
-
 export function billingPlan(site) {
     return site.customer.billingPlan;
 }
 
 // 클라이언트 3
-
 export function changeBillingPlan(site, newPlan) {
     const aCustomer = site.customer;
     aCustomer.billingPlan = newPlan;
