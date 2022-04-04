@@ -12,10 +12,10 @@ describe('10-5특이케이스 - 클라이언트1 customerName ', () => {
 
 describe('10-5특이케이스 - 클라이언트2 billingPlan', () => {
     it('미확인 고객은 basic 플랜', () => {
-        expect(billingPlan("미확인 고객")).to.equal("basic");
+        expect(billingPlan(new Site("미확인 고객"))).to.equal("basic");
     });
     it('미확인이 아니라면 원래 설정된 플랜 값을 가진다 ', () => {
-        expect(billingPlan(new Customer("Ahn", "Annual"))).to.equal("Annual");
+        expect(billingPlan(new Site(new Customer("Ahn", "Annual")))).to.equal("Annual");
     });
 });
 describe('10-5특이케이스 - 클라이언트3 newPlan', () => {

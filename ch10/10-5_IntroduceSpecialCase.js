@@ -66,7 +66,8 @@ const registry = {
     }
 };
 
-export function billingPlan(aCustomer) {
+export function billingPlan(site) {
+    const aCustomer = site.customer;
     const plan = (isUnknown(aCustomer)) ?
         registry.billingPlans.basic
         : aCustomer.billingPlan;
