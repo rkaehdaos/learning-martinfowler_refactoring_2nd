@@ -51,12 +51,8 @@ function isUnknown(arg) {
 
 // 클라이언트1
 export function customerName(site) {
-    const aCustomer = site.customer;
     // ... 수많은 코드 ...
-    let customerName;
-    customerName = aCustomer.name;
-
-    return customerName;
+    return site.customer.name;
 }
 
 // 클라이언트2
