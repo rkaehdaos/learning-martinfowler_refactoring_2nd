@@ -43,7 +43,7 @@ class UnknownCustomer {
 // 특이케이스 검사 코드
 function isUnknown(arg) {
     if (!((arg instanceof Customer) || (arg === "미확인 고객")))
-        throw new Error(`investigate bad value: <${arg}>`);
+        throw new Error(`잘못된 값과 비교: <${arg}>`);
     return (arg === "미확인 고객");
 }
 
