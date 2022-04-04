@@ -41,6 +41,10 @@ export class UnknownCustomer {
     get name() {return "거주자";}
     get billingPlan() {return "basic";}
     set billingPlan(arg) { /* 무시 */}
+    get paymentHistory() {return new NullPaymentHistory();}
+}
+export class NullPaymentHistory {
+    get weeksDelinquentInLastYear() {return 0;}
 }
 
 // 특이케이스 검사 코드
@@ -79,8 +83,6 @@ export function changeBillingPlan(site, newPlan) {
 // 클라이언트 4
 export function weeksDelinquent(site) {
     const aCustomer = site.customer;
-    const weeksDelinquent = (isUnknown(aCustomer)) ?
-        0
-        : aCustomer.paymentHistory.weeksDelinquentInLastYear;
+    const weeksDelinquent = aCustomer.paymentHistory.weeksDelinquentInLastYear;
     return weeksDelinquent;
 }
