@@ -40,6 +40,7 @@ export class UnknownCustomer {
     get isUnknown() {return true;}
     get name() {return "거주자";}
     get billingPlan() {return "basic";}
+    set billingPlan(arg) { /* 무시 */}
 }
 
 // 특이케이스 검사 코드
@@ -71,7 +72,7 @@ export function billingPlan(site) {
 
 export function changeBillingPlan(site, newPlan) {
     const aCustomer = site.customer;
-    if (!isUnknown(aCustomer)) aCustomer.billingPlan = newPlan;
+    aCustomer.billingPlan = newPlan;
     return aCustomer;
 }
 
