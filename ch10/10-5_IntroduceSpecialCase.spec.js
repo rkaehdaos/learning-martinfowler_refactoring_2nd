@@ -20,7 +20,7 @@ describe('10-5특이케이스 - 클라이언트2 billingPlan', () => {
 });
 describe('10-5특이케이스 - 클라이언트3 newPlan', () => {
     it('미확인 고객은 그냥 그대로 ', () => {
-        expect(changeBillingPlan("unknown")).to.equal("unknown");
+        expect(changeBillingPlan("미확인 고객")).to.equal("미확인 고객");
     });
     it('미확인 고객이 아니라면 고객 플랜값을 주어진 기본 요금제으로 변경 ', () => {
         expect(changeBillingPlan(new Customer("Ahn", "Annual"), "basic").billingPlan).to.equal("basic");
@@ -29,7 +29,7 @@ describe('10-5특이케이스 - 클라이언트3 newPlan', () => {
 
 describe('10-5특이케이스 - 클라이언트4 연체', () => {
     it('미확인 고객 연체기간은 0', () => {
-        expect(weeksDelinquent("unknown")).to.equal(0);
+        expect(weeksDelinquent("미확인 고객")).to.equal(0);
     });
     it('미확인 고객이 아니면 정의된 연체기간 리턴', () => {
         expect(weeksDelinquent(new Customer("Ahn", "Annual", {weeksDelinquentInLastYear: 2}))).to.equal(2);

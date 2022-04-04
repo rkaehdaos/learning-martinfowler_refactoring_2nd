@@ -77,13 +77,13 @@ export function billingPlan(aCustomer) {
 // 클라이언트 3
 
 export function changeBillingPlan(aCustomer, newPlan) {
-    if (aCustomer !== "unknown") aCustomer.billingPlan = newPlan;
+    if (aCustomer !== "미확인 고객") aCustomer.billingPlan = newPlan;
     return aCustomer;
 }
 
 // 클라이언트 4
 export function weeksDelinquent(aCustomer) {
-    const weeksDelinquent = (aCustomer === "unknown") ?
+    const weeksDelinquent = (aCustomer === "미확인 고객") ?
         0
         : aCustomer.paymentHistory.weeksDelinquentInLastYear;
     return weeksDelinquent;
