@@ -36,6 +36,11 @@ export class Customer {
 
 }
 
+class UnknownCustomer {
+    get isUnknown() {return true;}
+}
+
+
 // 클라이언트1
 export function customerName(site) {
     const aCustomer = site.customer;
