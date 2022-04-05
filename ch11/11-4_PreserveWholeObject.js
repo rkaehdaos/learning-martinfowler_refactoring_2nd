@@ -9,7 +9,7 @@ export class HeatingPlan {
     }
 
     xxNewWithinRange(aNumberRange) {
-
+        return this.withinRange(aNumberRange.low, aNumberRange.high);
     }
 }
 
