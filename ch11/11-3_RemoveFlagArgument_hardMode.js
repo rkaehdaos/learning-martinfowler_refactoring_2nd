@@ -1,3 +1,7 @@
+export function rushDeliveryDate(anOrder) {return deliveryDate(anOrder,true);}
+export function regularDeliveryDate(anOrder) {return deliveryDate(anOrder,false);}
+
+
 export function deliveryDate(anOrder, isRush) {
     let result;
     let deliveryTime;
