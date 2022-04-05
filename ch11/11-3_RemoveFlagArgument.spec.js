@@ -1,5 +1,5 @@
 import {expect} from "chai";
-import {deliveryDate, Order, rushDeliveryDate, regularDeliveryDate} from "./11-3_RemoveFlagArgument.js";
+import {Order, rushDeliveryDate, regularDeliveryDate} from "./11-3_RemoveFlagArgument.js";
 
 describe('rush 계산', () => {
 
