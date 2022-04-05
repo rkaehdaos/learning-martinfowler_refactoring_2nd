@@ -1,5 +1,5 @@
 export function baseCharge(usage) {
-    if (usage < 0) return usd(0);
+    // if (usage < 0) return usd(0);
     const amount =
         withinBand(usage, 0, 100) * 0.03
         + withinBand(usage, 100, 200) * 0.05
@@ -8,7 +8,9 @@ export function baseCharge(usage) {
 }
 
 function withinBand(usage, bottom, top) {
+    // return usage > bottom ? Math.min(usage, top) - bottom : 0;
     return usage > bottom ? Math.min(usage, top) - bottom : 0;
+
 }
 
 function usd(value) {

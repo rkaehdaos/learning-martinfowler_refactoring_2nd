@@ -2,6 +2,8 @@ import {expect} from "chai";
 import {baseCharge} from "./11-2_ParameterizeFunction.js";
 
 describe('11-2 baseCharge', () => {
+    it('usage가 0보다 작아도 0', () =>
+        expect(baseCharge(-1)).to.eql({currency: "$", currencyName: "USD", value: 0}));
     it('usage가 0이면 결과도 0', () =>
         expect(baseCharge(0)).to.eql({currency: "$", currencyName: "USD", value: 0}));
     it('10이면 bottomBand만 적용되서 0.3 ', () =>
