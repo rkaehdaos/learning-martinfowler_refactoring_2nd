@@ -7,6 +7,10 @@ export class HeatingPlan {
         return (bottom >= this._temperatureRange.low)
             && (top <= this._temperatureRange.high);
     }
+
+    xxNewWithinRange(aNumberRange) {
+
+    }
 }
 
 //호출자
@@ -19,6 +23,4 @@ export function temperatureAlerts(aRoom, aPlan) {
     return alerts;
 }
 
-export function xxNewWithinRange(aNumberRange) {
-    
-}
+
