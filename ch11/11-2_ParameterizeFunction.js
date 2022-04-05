@@ -12,7 +12,7 @@ function bottomBand(usage) {
 }
 
 //선택!
-function middleBand(usage) {
+function middleBand(usage, bottom, top) {
     return usage > 100 ? Math.min(usage, 200) - 100 : 0;
 }
 
