@@ -1,8 +1,8 @@
-export function rushDeliveryDate(anOrder) {return deliveryDate(anOrder,true);}
-export function regularDeliveryDate(anOrder) {return deliveryDate(anOrder,false);}
+export function rushDeliveryDate(anOrder) {return deliveryDateHelperOnly(anOrder,true);}
+export function regularDeliveryDate(anOrder) {return deliveryDateHelperOnly(anOrder,false);}
 
 
-function deliveryDate(anOrder, isRush) {
+function deliveryDateHelperOnly(anOrder, isRush) {
     let result;
     let deliveryTime;
     if (anOrder.deliveryState==="MA"||anOrder.deliveryState==="CT")
