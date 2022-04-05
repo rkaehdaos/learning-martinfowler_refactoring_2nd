@@ -19,7 +19,6 @@ function alertForMiscreant (people, alarm) {
             setOffAlarms(alarm, p);
         }
     }
-    return "";
 }
 
 function setOffAlarms(alarm, p) {
