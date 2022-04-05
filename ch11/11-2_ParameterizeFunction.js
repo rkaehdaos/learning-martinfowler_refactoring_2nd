@@ -13,7 +13,7 @@ function bottomBand(usage) {
 
 //선택!
 function withinBand(usage, bottom, top) {
-    return usage > bottom ? Math.min(usage, top) - 100 : 0;
+    return usage > bottom ? Math.min(usage, top) - bottom : 0;
 }
 
 function topBand(usage) {
