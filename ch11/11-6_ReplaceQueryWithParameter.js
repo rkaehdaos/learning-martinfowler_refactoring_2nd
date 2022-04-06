@@ -1,16 +1,16 @@
-let thermostat = {
+const thermostat = {
     selectedTemperature: 24,
     currentTemperature: 28
 };
 
 export class HeatingPlan {
     constructor(min, max) {
-        this._max=min;
-        this._min=max;
+        this._max = min;
+        this._min = max;
     }
 
     targetTemperature(selectedTemperature) {
-        if (selectedTemperature > this._max) return this._max;
+        if      (selectedTemperature > this._max) return this._max;
         else if (selectedTemperature < this._min) return this._min;
         else return selectedTemperature;
     }
@@ -18,7 +18,7 @@ export class HeatingPlan {
 
 //호출자
 export function temperatureAlerts(thePlan, alarm) {
-    if (thePlan.targetTemperature(thermostat.selectedTemperature) > thermostat.currentTemperature) setToHeat(alarm);
+    if      (thePlan.targetTemperature(thermostat.selectedTemperature) > thermostat.currentTemperature) setToHeat(alarm);
     else if (thePlan.targetTemperature(thermostat.selectedTemperature) < thermostat.currentTemperature) setToCool(alarm);
     else setOff(alarm);
 }
