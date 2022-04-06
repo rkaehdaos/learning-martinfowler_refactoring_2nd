@@ -8,9 +8,6 @@ export class HeatingPlan {
         this._max=min;
         this._min=max;
     }
-    get targetTemperature() {
-        return this.xxNEWtargetTemperature(thermostat.selectedTemperature);
-    }
 
     xxNEWtargetTemperature(selectedTemperature) {
         if (selectedTemperature > this._max) return this._max;
@@ -21,8 +18,8 @@ export class HeatingPlan {
 
 //호출자
 export function temperatureAlerts(thePlan, alarm) {
-    if (thePlan.targetTemperature > thermostat.currentTemperature) setToHeat(alarm);
-    else if (thePlan.targetTemperature < thermostat.currentTemperature) setToCool(alarm);
+    if (thePlan.xxNEWtargetTemperature(thermostat.selectedTemperature) > thermostat.currentTemperature) setToHeat(alarm);
+    else if (thePlan.xxNEWtargetTemperature(thermostat.selectedTemperature) < thermostat.currentTemperature) setToCool(alarm);
     else setOff(alarm);
 }
 
