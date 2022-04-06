@@ -9,7 +9,7 @@ export class Order {
         let discountLevel;
         if (this.quantity > 100) discountLevel = 2;
         else discountLevel = 1;
-        return this.discountedPrice(basePrice, discountLevel);
+        return this.discountedPrice(basePrice, this.discountLevel2);
     }
     get discountLevel2() {
         return (this.quantity > 100) ? 2 : 1;
