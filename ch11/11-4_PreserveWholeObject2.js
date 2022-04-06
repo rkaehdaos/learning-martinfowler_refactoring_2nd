@@ -4,10 +4,8 @@ export class HeatingPlan {
     }
 
     withinRange(aNumberRange) {
-        const low = aNumberRange.low;
-        const high = aNumberRange.high;
-        const isWithinRange = (low >= this._temperatureRange.low)
-            && (high <= this._temperatureRange.high);
+        const isWithinRange = (aNumberRange.low >= this._temperatureRange.low) &&
+            (aNumberRange.high <= this._temperatureRange.high);
         return isWithinRange;
     }
 }
