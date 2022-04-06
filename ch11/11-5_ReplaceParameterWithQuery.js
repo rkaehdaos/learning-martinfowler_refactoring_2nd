@@ -6,9 +6,9 @@ export class Order {
 
     get finalPrice() {
         const basePrice = this.quantity * this.itemPrice;
-        return this.discountedPrice(basePrice, this.discountLevel2);
+        return this.discountedPrice(basePrice, this.discountLevel);
     }
-    get discountLevel2() {
+    get discountLevel() {
         return (this.quantity > 100) ? 2 : 1;
     }
 
