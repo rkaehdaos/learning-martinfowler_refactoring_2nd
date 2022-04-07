@@ -1,9 +1,12 @@
 class Employee {
-    constructor (name, typeCode) {
+    constructor(name, typeCode) {
         this._name = name;
         this._typeCode = typeCode;
     }
-    get name() {return this._name;}
+
+    get name() {
+        return this._name;
+    }
 
     get type() {
         return Employee.legalTypeCodes[this._typeCode];
@@ -13,7 +16,17 @@ class Employee {
         return {"E": "Engineer", "M": "Manager", "S": "Salesman"};
     }
 }
-function createEmployee(name, typeCode) {
-    return new Employee(name, typeCode);
+
+function createEngineer(name) {
+    return new Employee(name, 'E');
 }
-export {Employee,createEmployee};
+
+function createManager(name) {
+    return new Employee(name, 'M');
+}
+
+function createSalesman(name) {
+    return new Employee(name, 'S');
+}
+
+export {Employee, createEngineer, createManager, createSalesman};
