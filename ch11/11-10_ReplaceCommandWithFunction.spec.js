@@ -1,5 +1,5 @@
 import {expect} from "chai";
-import {ChargeCalculator,charge} from "./11-10_ReplaceCommandWithFunction.js";
+import {charge} from "./11-10_ReplaceCommandWithFunction.js";
 
 describe('11-10 명령객체를 함수로 ', () => {
     const customer = {baseRate: 0.1};
