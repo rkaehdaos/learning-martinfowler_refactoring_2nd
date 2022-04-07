@@ -19,16 +19,22 @@ class Scorer {
         this._result = 0;
         this._healthLevel = 0;
         this._highMedicalRiskFlag = 0;
-
         this.scoreSmoking();
+
         this._certificationGrade = "regular";
+        this.scoreWithState();
+
+        // 비슷하게 함수로 추출
+
+        this._result -= Math.max(this._healthLevel - 5, 0);
+        return this._result;
+    }
+
+    scoreWithState() {
         if (this._scoringGuide.stateWithLowCertification(this._candidate.originState)) {
             this._certificationGrade = "low";
             this._result -= 5;
         }
-        // 비슷한 코드가 한참 이어짐
-        this._result -= Math.max(this._healthLevel - 5, 0);
-        return this._result;
     }
 
     scoreSmoking() {
