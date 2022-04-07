@@ -29,7 +29,6 @@ export function calcaulateTop(orderData, errorList) {
         else
             throw e;
     }
-    if (status < 0) throw new Error("오류 코드가 다 사라지지 않음");
 }
 
 class ShippingRules {
