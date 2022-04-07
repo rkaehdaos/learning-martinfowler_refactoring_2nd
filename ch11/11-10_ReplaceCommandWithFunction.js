@@ -12,6 +12,9 @@ class ChargeCalculator {
     }
 }
 
+function charge(customer, usage, provider) {
+    return new ChargeCalculator(customer, usage, provider).charge;
+}
 
 
-export {ChargeCalculator};
+export {ChargeCalculator,charge};
