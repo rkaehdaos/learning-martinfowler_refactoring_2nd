@@ -13,5 +13,7 @@ class Employee {
         return {"E": "Engineer", "M": "Manager", "S": "Salesman"};
     }
 }
-
-export {Employee};
+function createEmployee(name, typeCode) {
+    return new Employee(name, typeCode);
+}
+export {Employee,createEmployee};
