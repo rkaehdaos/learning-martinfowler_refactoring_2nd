@@ -23,4 +23,8 @@ class ScoringGuide {
     }
 }
 
-export {score, ScoringGuide};
+class Scorer {
+
+}
+
+export {score, ScoringGuide,Scorer};
