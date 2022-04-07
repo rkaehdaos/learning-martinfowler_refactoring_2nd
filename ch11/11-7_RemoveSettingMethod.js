@@ -1,5 +1,6 @@
 class Person {
-    constructor() {
+    constructor(id) {
+        this.id=id;
     }
     get name() {return this._name;}
     set name(arg) {this._name=arg;}
