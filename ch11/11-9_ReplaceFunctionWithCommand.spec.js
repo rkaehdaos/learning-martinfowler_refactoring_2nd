@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import {score, ScoringGuide} from "./11-9_ReplaceFunctionWithCommand.js";
+import {score, ScoringGuide,Scorer} from "./11-9_ReplaceFunctionWithCommand.js";
 
 describe('11-9 함수를 명령으로 대체', () => {
     it('흡연자가 낮은 state일 때 점수', () => {
