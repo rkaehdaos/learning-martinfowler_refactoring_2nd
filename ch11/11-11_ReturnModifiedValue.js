@@ -14,10 +14,7 @@ export function calculateWithGpsSignal(points, totalMinutes) {
         }
         return totalAscent;
     }
-    function calculateTime() {
 
-    }
-    function calculateDistance() {
-
-    }
+    function calculateTime() {}
+    function calculateDistance() {}
 }
