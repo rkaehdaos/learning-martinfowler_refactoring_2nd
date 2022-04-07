@@ -20,7 +20,6 @@ function calculateShippingCosts(anOrder) {
 }
 
 export function calcaulateTop(orderData, errorList) {
-
     try {
         calculateShippingCosts(orderData);
     } catch (e) {
