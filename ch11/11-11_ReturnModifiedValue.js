@@ -2,7 +2,7 @@ export function calculateWithGpsSignal(points, totalMinutes) {
     let totalAscent = 0;
     let totalTime = 0;
     let totalDistance = 0;
-    calculateAscent();
+    totalAscent = calculateAscent();
     calculateTime();
     calculateDistance();
     return totalAscent / totalMinutes;
@@ -12,7 +12,7 @@ export function calculateWithGpsSignal(points, totalMinutes) {
             const verticalChange = points[i].elevation - points[i - 1].elevation;
             totalAscent += (verticalChange > 0) ? verticalChange : 0;
         }
-
+        return totalAscent;
     }
     function calculateTime() {
 
