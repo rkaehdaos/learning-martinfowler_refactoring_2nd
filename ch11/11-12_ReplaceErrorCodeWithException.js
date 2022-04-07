@@ -16,16 +16,21 @@ function localShippingRules(country) {
 function calculateShippingCosts(anOrder) {
     // 관련 없는 코드
     const shippingRules = localShippingRules(anOrder.country);
-    if(shippingRules<0) return shippingRules;
+    if (shippingRules < 0) return shippingRules;
     //더 관련 없는 룰
 }
 
 export function calcaulateTop(orderData, errorList) {
     let status;
-    status = calculateShippingCosts(orderData);
-    if (status<0) errorList.push({order: orderData, errorCode: status});
+    try {
+        status = calculateShippingCosts(orderData);
+    } catch (e) {
+        throw e;
+    }
+    if (status < 0) errorList.push({order: orderData, errorCode: status});
 }
 
 class ShippingRules {
-    constructor(data) {}
+    constructor(data) {
+    }
 }
