@@ -20,9 +20,9 @@ function calculateShippingCosts(anOrder) {
 }
 
 export function calcaulateTop(orderData, errorList) {
-    let status;
+
     try {
-        status = calculateShippingCosts(orderData);
+        calculateShippingCosts(orderData);
     } catch (e) {
         if (e instanceof OrderProcessingError)
             errorList.push({order: orderData, errorCode: e.code});
