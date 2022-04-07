@@ -21,7 +21,8 @@ function calculateShippingCosts(anOrder) {
 }
 
 export function calcaulateTop(orderData, errorList) {
-    const status = calculateShippingCosts(orderData);
+    let status;
+    status = calculateShippingCosts(orderData);
     if (status<0) errorList.push({order: orderData, errorCode: status});
 }
 
