@@ -20,10 +20,7 @@ class Scorer {
         this._healthLevel = 0;
         this._highMedicalRiskFlag = 0;
 
-        if (this._medicalExam.isSmoker) {
-            this._healthLevel += 10;
-            this._highMedicalRiskFlag = true;
-        }
+        this.scoreSmoking();
         this._certificationGrade = "regular";
         if (this._scoringGuide.stateWithLowCertification(this._candidate.originState)) {
             this._certificationGrade = "low";
@@ -34,6 +31,12 @@ class Scorer {
         return this._result;
     }
 
+    scoreSmoking() {
+        if (this._medicalExam.isSmoker) {
+            this._healthLevel += 10;
+            this._highMedicalRiskFlag = true;
+        }
+    }
 }
 
 export {score, ScoringGuide, Scorer};
