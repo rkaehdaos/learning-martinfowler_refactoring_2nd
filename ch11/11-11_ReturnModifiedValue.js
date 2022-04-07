@@ -1,8 +1,7 @@
 export function calculateWithGpsSignal(points, totalMinutes) {
-    let totalAscent = 0;
+    const totalAscent = calculateAscent();
     let totalTime = 0;
     let totalDistance = 0;
-    totalAscent = calculateAscent();
     calculateTime();
     calculateDistance();
     return totalAscent / totalMinutes;
