@@ -16,7 +16,6 @@ function localShippingRules(country) {
 function calculateShippingCosts(anOrder) {
     // 관련 없는 코드
     const shippingRules = localShippingRules(anOrder.country);
-    if (shippingRules < 0) return shippingRules;
     //더 관련 없는 룰
 }
 
