@@ -9,9 +9,8 @@ class Person {
 }
 
 function makeMartin() {
-    let martin = new Person();
+    let martin = new Person("1234");
     martin.name = "마틴";
-    martin.id = "1234";
     return martin;
 }
 
