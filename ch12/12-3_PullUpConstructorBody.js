@@ -1,4 +1,6 @@
 class Party {
+    constructor() {
+    }
 }
 
 class Employee extends Party {
