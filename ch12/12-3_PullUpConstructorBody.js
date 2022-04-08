@@ -1,11 +1,12 @@
 class Party {
-    constructor() {
+    constructor(name) {
+        this._name = name;
     }
 }
 
 class Employee extends Party {
     constructor(name, id, monthlyCost) {
-        super();
+        super(name);
         this._name = name;
         this._id = id;
         this._monthlyCost = monthlyCost;
@@ -17,7 +18,7 @@ class Employee extends Party {
 
 class Department extends Party {
     constructor(name, staff) {
-        super();
+        super(name);
         this._name = name;
         this._staff = staff;
     }
