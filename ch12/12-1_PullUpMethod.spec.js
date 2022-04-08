@@ -8,6 +8,6 @@ describe('12-1 메서드 올리기', () => {
     });
     it('Department', () => {
         const department = new Department(20);
-        expect(department.totalAnnualCost).to.equal(240);
+        expect(department.annualCost).to.equal(240);
     });
 });
