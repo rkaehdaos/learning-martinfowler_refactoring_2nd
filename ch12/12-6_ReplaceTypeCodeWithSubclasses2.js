@@ -1,6 +1,7 @@
 class EmployeeType {
     get capitalizedName() {
-        return this.toString().charAt(0).toUpperCase() + this.toString().substr(1).toLowerCase();
+        return this.toString().charAt(0).toUpperCase() +
+            this.toString().substr(1).toLowerCase();
     }
 }
 
@@ -37,9 +38,7 @@ export class Employee {
         }
     }
 
-    toString() {
-        return `${this._name} (${this.type.capitalizedName})`;
-    }
+    toString() {return `${this._name} (${this.type.capitalizedName})`;}
 }
 
 // 이미 서브클래스 존재
