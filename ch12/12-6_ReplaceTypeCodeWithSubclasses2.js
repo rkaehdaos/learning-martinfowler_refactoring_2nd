@@ -21,7 +21,6 @@ export class Employee {
         this.type = type;
     }
 
-    get typeString(){return this._type.toString();}
     get type()      {return this._type;}
     set type(arg)   {this._type= Employee.createEmployeeType(arg);}
 
