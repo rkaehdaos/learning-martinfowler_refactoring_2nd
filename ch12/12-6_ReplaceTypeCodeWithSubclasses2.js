@@ -1,6 +1,4 @@
 class EmployeeType {
-    constructor(aString) {this._value = aString;}
-
 }
 
 class Engineer extends EmployeeType {
@@ -27,11 +25,11 @@ export class Employee {
     static createEmployeeType(aString) {
         switch (aString) {
             case "engineer":
-                return new Engineer(aString);
+                return new Engineer();
             case "manager":
-                return new Manager(aString);
+                return new Manager();
             case "salesman":
-                return new Salesman(aString);
+                return new Salesman();
             default:
                 throw new Error(`${aString}라는 직원 유형은 없습니다.`);
         }
