@@ -15,15 +15,10 @@ class Salesman extends EmployeeType {
 export class Employee {
 
     constructor(name, type) {
-        this.validateType(type);
         this._name = name;
         this.type = type;
     }
 
-    validateType(arg) {
-        if (!["engineer", "manager", "salesman"].includes(arg))
-            throw new Error(`${arg}라는 직원 유형은 없습니다.`);
-    }
     get typeString(){return this._type.toString();}
     get type()      {return this._type;}
     set type(arg)   {this._type= Employee.createEmployeeType(arg);}
@@ -36,8 +31,9 @@ export class Employee {
                 return new Manager(aString);
             case "salesman":
                 return new Salesman(aString);
+            default:
+                throw new Error(`${aString}라는 직원 유형은 없습니다.`);
         }
-        return new EmployeeType(aString);
     }
 
     get capitalizedType() {
