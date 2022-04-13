@@ -22,10 +22,15 @@ class Engineer extends Employee {
     get type() {return "engineer";}
 }
 
+class Salesman extends Employee {
+    get type() {return "salesman";}
+}
 export function createEmployee(name, type) {
     switch (type) {
         case "engineer":
             return new Engineer(name, type);
+        case "salesman":
+            return new Salesman(name, type);
     }
     return new Employee(name, type);
 }
