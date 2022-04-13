@@ -11,6 +11,10 @@ class EmployeeType {
 class Engineer extends EmployeeType {
     toString() {return "engineer";}
 }
+class Manager extends EmployeeType {
+    toString() {return "manager";}
+}
+
 
 export class Employee {
 
@@ -33,7 +37,7 @@ export class Employee {
             case "engineer":
                 return new Engineer(aString);
             case "manager":
-                ;
+                return new Manager(aString);
             case "salesman":
                 ;
         }
