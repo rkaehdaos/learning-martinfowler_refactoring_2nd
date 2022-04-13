@@ -13,7 +13,7 @@ export class Employee {
     constructor(name, type) {
         this.validateType(type);
         this._name = name;
-        this._type = type;
+        this.type = type;
     }
 
     validateType(arg) {
@@ -22,7 +22,19 @@ export class Employee {
     }
     get typeString(){return this._type.toString();}
     get type()      {return this._type;}
-    set type(arg)   {this._type= new EmployeeType(arg);}
+    set type(arg)   {this._type= Employee.createEmployeeType(arg);}
+
+    static createEmployeeType(aString) {
+        switch (aString) {
+            case "engineer":
+                ;
+            case "manager":
+                ;
+            case "salesman":
+                ;
+        }
+        return new EmployeeType(aString);
+    }
 
     get capitalizedType() {
         return this.typeString.charAt(0).toUpperCase() + this.typeString.substr(1).toLowerCase();
