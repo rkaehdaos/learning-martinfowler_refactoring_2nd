@@ -8,6 +8,10 @@ class EmployeeType {
     }
 }
 
+class Engineer extends EmployeeType {
+    toString() {return "engineer";}
+}
+
 export class Employee {
 
     constructor(name, type) {
@@ -27,7 +31,7 @@ export class Employee {
     static createEmployeeType(aString) {
         switch (aString) {
             case "engineer":
-                ;
+                return new Engineer(aString);
             case "manager":
                 ;
             case "salesman":
