@@ -1,11 +1,6 @@
 class EmployeeType {
-    constructor(aString) {
-        this._value = aString;
-    }
-
-    toString() {
-        return this._value;
-    }
+    constructor(aString) {this._value = aString;}
+    toString() {return this._value;}
 }
 
 class Engineer extends EmployeeType {
@@ -14,7 +9,8 @@ class Engineer extends EmployeeType {
 class Manager extends EmployeeType {
     toString() {return "manager";}
 }
-
+class Salesman extends EmployeeType {
+}
 
 export class Employee {
 
@@ -39,7 +35,7 @@ export class Employee {
             case "manager":
                 return new Manager(aString);
             case "salesman":
-                ;
+                return new Salesman(aString);
         }
         return new EmployeeType(aString);
     }
