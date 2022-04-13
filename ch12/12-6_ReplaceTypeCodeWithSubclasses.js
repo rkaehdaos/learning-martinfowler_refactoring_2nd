@@ -12,7 +12,12 @@ export class Employee {
     }
 
     get type() {return this._type;}
+
     toString() {
         return `${this._name} (${this.type})`;
     }
+}
+
+class Engineer extends Employee {
+    get type() {return "engineer";}
 }
